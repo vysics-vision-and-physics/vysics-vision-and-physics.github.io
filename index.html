@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="SceneComplete:  Open-World 3D Scene Completion in Complex Real World Environments for Robot Manipulation ">
+    <meta name="keywords" content="SceneComplete, Open-World, Scene Completion, Robot Manipulation, Real World">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SceneComplete</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-2 publication-title">SceneComplete: Open-World 3D Scene Completion in
+                            Complex Real World Environments for Robot Manipulation</h1>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://skymanaditya1.github.io/" target="_blank">Aditya
+                                    Agarwal</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                                <span class="author-block">
+                                    <a href="https://vanhalen42.github.io/" target="_blank">Gaurav
+                                        Singh</a><sup>2</sup>,</span>
+                                <span class="author-block">
+                                    <a href="https://bipashasen.github.io/" target="_blank">Bipasha Sen</a><sup>1</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://people.csail.mit.edu/tlp/" target="_blank">Tomás
+                                        Lozano-Pérez</a><sup>1</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://www.csail.mit.edu/person/leslie-kaelbling" target="_blank">Leslie
+                                        Pack Kaelbling</a><sup>1</sup>,
+                                </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>MIT CSAIL, </span>
+                            <span class="author-block"><sup>2</sup>IIIT Hyderabad</span>
+
+
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/pdf/2404.04643.pdf"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper (coming Soon)</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/2404.04643"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv (coming Soon)</span>
+                                    </a>
+                                </span>
+                                <!-- <span class="link-block">
+                                    <a href="#"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span> -->
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code (coming soon)</span>
+                                    </a>
+                                    <!-- <span class="link-block">
+                                        <a href="#"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="far fa-images"></i>
+                                            </span>
+                                            <span>Data</span>
+                                        </a>
+                                    </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero is-light p-5" style="background-color: rgb(252, 252, 252);">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered video-container">
+                <video id="matting-video" autoplay muted loop playsinline height="100%">
+                    <source src="./static/images/scene_complete_banner.mp4" type="video/mp4">
+                </video>
+            </div>
+
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered my-5">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        Careful robot manipulation in every-day cluttered environments requires an accurate
+                        understanding of the 3D scene, in order to grasp and place objects stably and reliably and to
+                        avoid mistakenly colliding with other objects. In general, we must construct such a 3D
+                        interpretation of a complex scene based on limited input, such as a single RGB-D image. We
+                        describe <b>SceneComplete</b>, a system for constructing a complete, segmented, 3D model of a
+                        scene from a single view. It provides a novel pipeline for composing general-purpose pretrained
+                        perception modules (vision-language, segmentation, image-inpainting, image-to-3D, and
+                        pose-estimation) to obtain high-accuracy results. We demonstrate its accuracy and effectiveness
+                        with respect to ground-truth models in a large benchmark dataset and show that its accurate
+                        whole-object reconstruction enables robust grasp proposal generation, including for a dexterous
+                        hand.
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+
+            <div class="columns has-text-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">Architecture</h2>
+                    <img src="./static/images/arch55.jpg">
+                    <div class="content has-text-justified my-4">
+                        The figure illustrates the overall design of SceneComplete. It takes a single RGB-D image as
+                        input and produces a set of object meshes that are registered with the input 3D scan. The
+                        objective is to provide an accurate 3D reconstruction of the scene, in terms of segmentation
+                        into rigid components, and the shape of each component, expressed as a mesh.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="section" id="BibTeX" style="margin-bottom: 3rem;">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@misc{scenecomplete2024,
+    title={SceneComplete: Open-World 3D Scene Completion in Complex Real World Environments for Robot Manipulation},
+    author={Aditya Agarwal and Gaurav Singh and Bipasha Sen and Tomás Lozano-Pérez and Leslie Pack Kaelbling},
+    year={2024},
+    journal={}
+    <!-- eprint={},
+    archivePrefix={},
+    primaryClass={} -->
+}</code></pre>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>. It is borrowing this <a
+                                href="https://github.com/nerfies/nerfies.github.io">source code</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div hidden="hidden">
+        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=Fp3OV0D2ycF0jHT6VcMi3CdJFG_vn6lt5jKJI4zhJYQ&cl=ffffff&w=a"></script>
+    </div>
+
+</body>
+
+</html>
