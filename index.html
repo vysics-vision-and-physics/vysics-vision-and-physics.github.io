@@ -1,223 +1,406 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="description"
-        content="SceneComplete:  Open-World 3D Scene Completion in Complex Real World Environments for Robot Manipulation ">
-    <meta name="keywords" content="SceneComplete, Open-World, Scene Completion, Robot Manipulation, Real World">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta charset="utf-8" />
     <title>SceneComplete</title>
 
+    <meta content="SceneComplete is an open-world 3D scene completion system, that constructs a complete, segmented, 3D model of a scene from a single RGB-D image."
+        name="description" />
+    <meta content="SceneComplete is an open-world 3D scene completion system." property="og:title" />
+    <meta content="SceneComplete is an open-world 3D scene completion system, that constructs a complete, segmented, 3D model of a scene from a single RGB-D image."
+        name="description"
+        property="og:description" />
+    <meta content="https://scenecomplete.github.io/static/images/meta.png" property="og:image" />
+    <meta content="SceneComplete is an open-world 3D scene completion system." property="twitter:title" />
+    <meta content="SceneComplete is an open-world 3D scene completion system, that constructs a complete, segmented, 3D model of a scene from a single RGB-D image."
+        name="description"
+        property="twitter:description" />
+    <meta content="https://scenecomplete.github.io/static/images/meta.png" property="twitter:image" />
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <script
+        type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic", "Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Changa One:400,400italic", "Varela Round:400", "Bungee Shade:regular", "Roboto:300,regular,500", "Bungee Outline:regular"] } });</script>
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
 
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/favicon.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="./static/images/favicon.svg" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
+
+    <script>
+        // Check if the user is on a mobile device or the window width is 800px or less.
+        if (window.innerWidth <= 800 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = "mobile.html";  // Redirect to mobile version
+        }
+    </script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-
 </head>
 
 <body>
+    <div class="section">
+        <div class="container">
+            <h1 class="title">SceneComplete</h1>
+            <h1 class="subheader">Open-World 3D Scene Completion in
+                Complex Real World Environments for Robot Manipulation</h1>
+
+            <div class="publication-authors" style="font-size:1.25rem;">
+                <span class="author-block">
+                    <a href="https://skymanaditya1.github.io/" target="_blank">Aditya
+                        Agarwal</a><sup>1</sup>,</span>
+                <span class="author-block">
+                    <span class="author-block">
+                        <a href="https://vanhalen42.github.io/" target="_blank"><span style="background-color: rgb(255, 255, 184);">Gaurav
+                            Singh</span></a><sup>2</sup>,</span>
+                    <span class="author-block">
+                        <a href="https://bipashasen.github.io/" target="_blank">Bipasha Sen</a><sup>1</sup>,
+                    </span>
+                    <span class="author-block">
+                        <a href="https://people.csail.mit.edu/tlp/" target="_blank">Tomás
+                            Lozano-Pérez</a><sup>1</sup>,
+                    </span>
+                    <span class="author-block">
+                        <a href="https://www.csail.mit.edu/person/leslie-kaelbling" target="_blank">Leslie
+                            Pack Kaelbling</a><sup>1</sup>
+                    </span>
+            </div>
+            <br>
+            <div class="publication-authors" style="font-size:1.25rem;">
+                <span class="author-block"><sup>1</sup>MIT CSAIL, </span>
+                <span class="author-block"><sup>2</sup>IIIT Hyderabad</span>
+                <br>
+                <br>
+                <span style="background-color: rgb(255, 255, 184); font-size: 1rem;"><i>Graduating. Applying for PhD positions</i></span>
+            </div>
+            <br>
+
+            <div class="link-labels base-row">
+                <!-- TODO: Update arxiv link -->
+                <div class="base-col icon-col"><a href="https://arxiv.org/pdf/2410.23643v1" target="_blank"
+                        class="link-block"><img
+                            src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png"
+                            alt="paper"
+                            sizes="(max-width: 479px) 12vw, (max-width: 767px) 7vw, (max-width: 991px) 41.8515625px, 56.6953125px"
+                            srcset="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01-p-500.png 500w, https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png 672w"
+                            class="icon-img" /></a></div>
+                <!-- TODO: Update code link -->
+                <div class="base-col icon-col"><a href="#" target="_blank" ><img
+                            src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cae3b53b42ebb3dd4175a82_68747470733a2f2f7777772e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f6f637469636f6e732f313032342f6d61726b2d6769746875622d3235362e706e67.png"
+                            alt="GitHub" class="icon-img github-img-icon" /></a></div>
+                <!-- TODO: Update data link -->
+                
+                <div class="column-2 base-col icon-col"><a href="https://youtu.be/Tuzhn4HWiL0" target="_blank" class="link-block"><img
+                            src="./static/logos/youtube_1.svg"
+                            alt="paper" class="icon-img data-img-icon" /></a></div>
+            </div>            
+            <div class="link-labels base-row">
+                <div class="base-col icon-col">
+                    <strong class="link-labels-text">Paper</strong>
+                </div>
+                <div class="base-col icon-col">
+                    <strong class="link-labels-text">Code (Coming Soon)</strong>
+                </div>
+                <div class="base-col icon-col">
+                    <strong class="link-labels-text">Video</strong>
+                </div>
+            </div>
+            <h1 class="tldr">
+                <b>TL;DR</b>:
+                <u>SceneComplete</u> is an open-world 3D scene completion system, that constructs a complete, segmented, 3D model of a scene from a single RGB-D image.
+            </h1>
+            <br>
+            <video id="main-video" autobuffer muted autoplay loop>
+                <source id="mp4" src="./static/images/scene_complete_banner.mp4" type="video/mp4">
+            </video>
+            <br>
+            <br>
+            <br>
+            <div class="base-row add-top-padding">
+                <h1 id="abstract">Experiments</h1>
+            </div>
+            <nav>
+                <div class="carousel-slider-wrapper">
+                    <div class = "carousel-slider">
+
+                        <div class="video-container">
+                            <video  loop playsinline muted autoplay>
+                                <source autoplay src="./static/images/carousel/compressed_carousel2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="video-container">
+                            <video  loop playsinline muted autoplay>
+                                <source autoplay src="./static/images/carousel/compressed_carousel3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="video-container">
+                            <video  loop playsinline muted autoplay>
+                                <source autoplay src="./static/images/carousel/compressed_carousel4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="video-container">
+                            <video  loop playsinline muted autoplay>
+                                <source autoplay src="./static/images/carousel/compressed_carousel1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <button class="carousel-button left" type="button">&lt;</button>
+                    <button class="carousel-button right" type="button">&gt;</button>
+                </div>
+            </nav>
+            <div class="base-row add-top-padding">
+                <h1 id="abstract">Abstract</h1>
+                <p class="paragraph">
+                    Careful robot manipulation in every-day cluttered environments requires an accurate understanding of the 3D scene, in order to grasp and place objects stably and reliably and to avoid mistakenly colliding with other objects. In general, we must construct such a 3D interpretation of a complex scene based on limited input, such as a single RGB-D image. We describe SceneComplete, a system for constructing a complete, segmented, 3D model of a scene from a single view. It provides a novel pipeline for composing general-purpose pretrained perception modules (vision-language, segmentation, image-inpainting, image-to-3D, and pose-estimation) to obtain high-accuracy results. We demonstrate its accuracy and effectiveness with respect to ground-truth models in a large benchmark dataset and show that its accurate whole-object reconstruction enables robust grasp proposal generation, including for a dexterous hand.
+                </p>
+            </div>
+            
+            <!-- <div>
+                <img id="splash-fig" src="data/splash.jpg" />
+            </div> -->
+            <div class="base-row add-top-padding">
+                <h1 id="abstract">Architecture</h1>
+                <video id="arch-video" autoplay muted loop playsinline height="100%">
+                    <source src="./static/images/scenecomplete_architecture.mp4" type="video/mp4">
+                </video>
+                <p class="paragraph">
+                    The figure illustrates the overall design of <b>SceneComplete</b>. It takes a single RGB-D image as input and produces a set of object meshes that are registered with the input 3D scan. The objective is to provide an accurate 3D reconstruction of the scene, in terms of segmentation into rigid components, and the shape of each component, expressed as a mesh.
+                </p>
+            </div>
+
+            <br>
+
+            <div class="base-row add-top-padding">
+                <h1 id="abstract">Results</h1>
+            </div>
+            <div class="base-row">
+
+                <div class="base-row add-top-padding">
+
+                    <h3 class="results-text">
+                        <b>Click the thumbnails below to interact with the reconstructed 3D scenes.</b>
+                    </h3>
+                </div>
+
+                <!-- <div id="main-results">
+                    <canvas id="canvas" width="960px" height="540px"></canvas>
+                    <canvas id="canvas-overlay" width="960px" height="540px"></canvas>
+                </div> -->
+                <!-- <iframe id="colormug-black-sem" class="iframe" src="https://brentyi.github.io/viser-embed-test/?playbackPath=https://brentyi.github.io/viser-embed-test/trajectories/black_handle_sem.viser"></iframe> -->
+                <div id="iframe-container" class="iframe-container">
+                    <model-viewer id="demo1" src="./static/3d/scene1_v2.glb" shadow-intensity="1"
+                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar
+                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"
+                        class="iframe"
+                        style="display: none;"></model-viewer>
+                    <model-viewer id="demo2" src="./static/3d/scene17.glb" shadow-intensity="1"
+                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar
+                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"
+                        class="iframe"
+                        style="display: none;"></model-viewer>
+                    <model-viewer id="demo3" src="./static/3d/scene22.glb" shadow-intensity="1"
+                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar
+                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"
+                        class="iframe"
+                        style="display: none;"></model-viewer>
+                    <model-viewer id="demo4" src="./static/3d/scene23.glb" shadow-intensity="1"
+                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar
+                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"
+                        class="iframe"
+                        style="display: none;"></model-viewer>
+                    <model-viewer id="demo5" src="./static/3d/scene36.glb" shadow-intensity="1"
+                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar
+                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"
+                        class="iframe"
+                        style="display: none;"></model-viewer>
+                    <model-viewer id="demo6" src="./static/3d/scene_20_teaser.glb" shadow-intensity="1"
+                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar
+                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"
+                        class="iframe"
+                        ></model-viewer>
+                    <model-viewer id="demo7" src="./static/3d/scene30.glb" shadow-intensity="1"
+                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar
+                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"
+                        class="iframe"
+                        style="display: none;"></model-viewer>
+                </div>
 
 
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
+                <div id="main-results" onclick="play_pause()">
+                    <canvas id="canvas"></canvas>
+                    <canvas id="canvas-overlay"></canvas>
+                </div>
+
+
+                <div class="base-row" style="display: inline-block">
+                    <button class="slide-arrow" id="slide-arrow-prev" onclick="slide_left()">
+                        &#8249;
+                    </button>
+                    
+                    <div class="base-row thumbnail-row" , id="thumbnails-scroll">
+                        <div class="base-col thumbnail-col">
+                            <button class="thumbnail-btn" id="thumb-5">
+                                <img src="./static/images/thumbnails/scene6.png" alt="paper" class="thumbnails" />
+                                Scene1
+                            </button>
+                        </div>
+                        <div class="base-col thumbnail-col">
+                            <button class="thumbnail-btn" id="thumb-0">
+                                <img src="./static/images/thumbnails/scene1.png" alt="paper" class="thumbnails" />
+                                Scene2
+                            </button>
+                        </div>
+                        <div class="base-col thumbnail-col">
+                            <button class="thumbnail-btn" id="thumb-1">
+                                <img src="./static/images/thumbnails/scene2.png" alt="paper" class="thumbnails" />
+                                Scene3
+                            </button>
+                        </div>
+                        <div class="base-col thumbnail-col">
+                            <button class="thumbnail-btn" id="thumb-2">
+                                <img src="./static/images/thumbnails/scene3.png" alt="paper" class="thumbnails" />
+                                Scene4
+                            </button>
+                        </div>
+                        <div class="base-col thumbnail-col">
+                            <button class="thumbnail-btn" id="thumb-3">
+                                <img src="./static/images/thumbnails/scene4.png" alt="paper" class="thumbnails" />
+                                Scene5
+                            </button>
+                        </div>
+                        <div class="base-col thumbnail-col">
+                            <button class="thumbnail-btn" id="thumb-4">
+                                <img src="./static/images/thumbnails/scene5.png" alt="paper" class="thumbnails" />
+                                Scene6
+                            </button>
+                        </div>
+                        <div class="base-col thumbnail-col">
+                            <button class="thumbnail-btn" id="thumb-6">
+                                <img src="./static/images/thumbnails/scene7.png" alt="paper" class="thumbnails" />
+                                Scene7
+                            </button>
+                        </div>
+                    </div>
+                    <button class="slide-arrow" id="slide-arrow-next" onclick="slide_right()">
+                        &#8250;
+                    </button>
+                </div>
+                </div>
+                <h3>This in-browser interactive 3D scene is enabled by <a style="text-decoration:none" href="https://github.com/nerfstudio-project/viser">Viser</a></h3>
+                <br>
+
+                <div class="base-row add-top-padding">
+                    <h1>Evaluating SceneComplete</h1>
+                    <p class="paragraph">
+                        We evaluate <b>SceneComplete</b> on the challenging GraspNet-1Billion dataset and observe that the parallel jaw grasps sampled using antipodal grasp sampling enable more robust predictions with fewer collisions on the ground truth scene. We also demnstrate dexterous grasps using both Shadow Hands and Allegro Hands, highlighting improved manipulation of complex objects with complete 3D reconstructions.
+                    </p>
+                </div>
+
+                <img id="pipeline-img" src="./static/images/qualitative.png" />
+
+                <br>
+                <br>
+
+                <div class="base-row add-top-padding">
+                    <h1>SceneComplete enables dexterous grasping</h1>
+                    <p class="paragraph">
+                        A significant test of the utility of our approach is whether
+                        the individual object reconstructions support the computation
+                        of good dexterous grasps for a multi-fingered hand. We show that <b>SceneComplete</b> enables dexterous grasping by generating stable grasp proposals for a multi-fingered hand. We instantiate Isaac Gym with the selected hand and the ground truth object mesh and lift the hand within the simulation to detect whether the object is dropped using PhysX as the physics engine.
+                    </p>
+                </div>
+                
                 <div class="columns is-centered">
-                    <div class="column has-text-centered">
-                        <h1 class="title is-2 publication-title">SceneComplete: Open-World 3D Scene Completion in
-                            Complex Real World Environments for Robot Manipulation</h1>
 
-                        <div class="is-size-5 publication-authors">
-                            <span class="author-block">
-                                <a href="https://skymanaditya1.github.io/" target="_blank">Aditya
-                                    Agarwal</a><sup>1</sup>,</span>
-                            <span class="author-block">
-                                <span class="author-block">
-                                    <a href="https://vanhalen42.github.io/" target="_blank">Gaurav
-                                        Singh</a><sup>2</sup>,</span>
-                                <span class="author-block">
-                                    <a href="https://bipashasen.github.io/" target="_blank">Bipasha Sen</a><sup>1</sup>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://people.csail.mit.edu/tlp/" target="_blank">Tomás
-                                        Lozano-Pérez</a><sup>1</sup>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://www.csail.mit.edu/person/leslie-kaelbling" target="_blank">Leslie
-                                        Pack Kaelbling</a><sup>1</sup>,
-                                </span>
+                    <!-- Relocalization (particle filter) -->
+                    <div class="column">
+                        <div class="content">
+                            <div class="interpolation-image-wrapper-zero-shot">
+                                <video poster="" id="snoopy" autoplay controls muted loop playsinline height="100%">
+                                    <source src="./static/images/dexterous_grasping/dexterous1.mp4" type="video/mp4">
+                                </video>
+                            </div>
                         </div>
-
-                        <div class="is-size-5 publication-authors">
-                            <span class="author-block"><sup>1</sup>MIT CSAIL, </span>
-                            <span class="author-block"><sup>2</sup>IIIT Hyderabad</span>
-
-
-                        </div>
-
-                        <div class="column has-text-centered">
-                            <div class="publication-links">
-                                <span class="link-block">
-                                    <a href="#"
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fas fa-file-pdf"></i>
-                                        </span>
-                                        <span>Paper (coming Soon)</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="#"
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="ai ai-arxiv"></i>
-                                        </span>
-                                        <span>arXiv (coming Soon)</span>
-                                    </a>
-                                </span>
-                                <!-- <span class="link-block">
-                                    <a href="#"
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-youtube"></i>
-                                        </span>
-                                        <span>Video</span>
-                                    </a>
-                                </span> -->
-                                <span class="link-block">
-                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-github"></i>
-                                        </span>
-                                        <span>Code (coming soon)</span>
-                                    </a>
-                                    <!-- <span class="link-block">
-                                        <a href="#"
-                                            class="external-link button is-normal is-rounded is-dark">
-                                            <span class="icon">
-                                                <i class="far fa-images"></i>
-                                            </span>
-                                            <span>Data</span>
-                                        </a>
-                                    </span> -->
+                    </div>
+                    <!--/ Relocalization (particle filter) -->
+                
+                    <!-- Text queries via CLIP / GPT-4 -->
+                    <div class="column">
+                        <div class="content">
+                            <div class="interpolation-image-wrapper-zero-shot">
+                                <video poster="" id="snoopy" autoplay controls muted loop playsinline height="100%">
+                                    <source src="./static/images/dexterous_grasping/dexterous2.mp4" type="video/mp4">
+                                </video>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-
-    <section class="hero is-light p-5" style="background-color: rgb(252, 252, 252);">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered video-container">
-                <video id="matting-video" autoplay muted loop playsinline height="100%">
-                    <source src="./static/images/scene_complete_banner.mp4" type="video/mp4">
-                </video>
-            </div>
-
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-
-            <!-- Abstract. -->
-            <div class="columns is-centered has-text-centered my-5">
-                <div class="column is-four-fifths">
-                    <h2 class="title is-3">Abstract</h2>
-                    <div class="content has-text-justified">
-                        Careful robot manipulation in every-day cluttered environments requires an accurate
-                        understanding of the 3D scene, in order to grasp and place objects stably and reliably and to
-                        avoid mistakenly colliding with other objects. In general, we must construct such a 3D
-                        interpretation of a complex scene based on limited input, such as a single RGB-D image. We
-                        describe <b>SceneComplete</b>, a system for constructing a complete, segmented, 3D model of a
-                        scene from a single view. It provides a novel pipeline for composing general-purpose pretrained
-                        perception modules (vision-language, segmentation, image-inpainting, image-to-3D, and
-                        pose-estimation) to obtain high-accuracy results. We demonstrate its accuracy and effectiveness
-                        with respect to ground-truth models in a large benchmark dataset and show that its accurate
-                        whole-object reconstruction enables robust grasp proposal generation, including for a dexterous
-                        hand.
-                    </div>
+                <div class="citation add-top-padding">
+                    <h1 id="abstract"> Citation </h1>
+                    <!-- <p> If you find this work useful, please consider citing: (bibtex) </p> -->
+                    <pre id="codecell0">@misc{agarwal2024scenecompleteopenworld3dscene,
+&nbsp;title={SceneComplete: Open-World 3D Scene Completion in Complex Real World Environments for Robot Manipulation}, 
+&nbsp;author={Aditya Agarwal and Gaurav Singh and Bipasha Sen and Tomás Lozano-Pérez and Leslie Pack Kaelbling},
+&nbsp;year={2024},
+&nbsp;eprint={2410.23643},
+&nbsp;archivePrefix={arXiv},
+&nbsp;primaryClass={cs.RO},
+&nbsp;url={https://arxiv.org/abs/2410.23643}, 
+}
+</pre>
                 </div>
             </div>
         </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-
-            <div class="columns has-text-centered">
-                <div class="column is-full-width">
-                    <h2 class="title is-3">Architecture</h2>
-                    <img src="./static/images/arch55.jpg">
-                    <div class="content has-text-justified my-4">
-                        The figure illustrates the overall design of SceneComplete. It takes a single RGB-D image as
-                        input and produces a set of object meshes that are registered with the input 3D scan. The
-                        objective is to provide an accurate 3D reconstruction of the scene, in terms of segmentation
-                        into rigid components, and the shape of each component, expressed as a mesh.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section class="section" id="BibTeX" style="margin-bottom: 3rem;">
-        <div class="container is-max-desktop content">
-            <h2 class="title">BibTeX</h2>
-            <pre><code>@misc{scenecomplete2024,
-    title={SceneComplete: Open-World 3D Scene Completion in Complex Real World Environments for Robot Manipulation},
-    author={Aditya Agarwal and Gaurav Singh and Bipasha Sen and Tomás Lozano-Pérez and Leslie Pack Kaelbling},
-    year={2024},
-    journal={}
-    <!-- eprint={},
-    archivePrefix={},
-    primaryClass={} -->
-}</code></pre>
-        </div>
-    </section>
-
-
-    <footer class="footer">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-8">
-                    <div class="content">
-                        <p>
-                            This website is licensed under a <a rel="license"
-                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                                Commons Attribution-ShareAlike 4.0 International License</a>. It is borrowing this <a
-                                href="https://github.com/nerfies/nerfies.github.io">source code</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div hidden="hidden">
-        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=Fp3OV0D2ycF0jHT6VcMi3CdJFG_vn6lt5jKJI4zhJYQ&cl=ffffff&w=a"></script>
     </div>
 
-</body>
+    		
+    <p style="text-align:left;font-size:small;padding: 1%;">
+        Source code for this page was taken from <a href="https://www.lerf.io/">LERF's website</a>. 
+    </p>
+  
 
+    <script>
+        const carousel = document.querySelector('.carousel-slider');
+        const videoContainers = document.querySelectorAll('.video-container');
+        let currentPosition = 0;
+  
+        const leftButton = document.querySelector('.carousel-button.left');
+        leftButton.addEventListener('click', () => {
+            if (currentPosition - 1 < 0) {
+                currentPosition = videoContainers.length - 1;
+            } else {
+                currentPosition = currentPosition - 1;
+            }
+            
+            carousel.scrollTo({ left: videoContainers[currentPosition].offsetLeft, behavior: 'smooth' });
+        });
+  
+        const rightButton = document.querySelector('.carousel-button.right');
+        rightButton.addEventListener('click', () => {
+            if (currentPosition + 1 > videoContainers.length - 1) {
+                currentPosition = 0;
+            } else {
+                currentPosition = currentPosition + 1;
+            }
+            // currentPosition = Math.min(currentPosition + 1, videoContainers.length - 1);
+            carousel.scrollTo({ left: videoContainers[currentPosition].offsetLeft, behavior: 'smooth' });
+        });
+    </script>
+</body>
 </html>
