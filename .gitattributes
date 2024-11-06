@@ -1,7 +1,0 @@
-static/3d/scene17.glb filter=lfs diff=lfs merge=lfs -text
-static/3d/scene1_v2.glb filter=lfs diff=lfs merge=lfs -text
-static/3d/scene_20_teaser.glb filter=lfs diff=lfs merge=lfs -text
-static/3d/scene22.glb filter=lfs diff=lfs merge=lfs -text
-static/3d/scene23.glb filter=lfs diff=lfs merge=lfs -text
-static/3d/scene30.glb filter=lfs diff=lfs merge=lfs -text
-static/3d/scene36.glb filter=lfs diff=lfs merge=lfs -text
