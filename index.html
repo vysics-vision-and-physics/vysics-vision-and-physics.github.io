@@ -4,7 +4,7 @@
 
 
     <meta charset="utf-8" />
-    <title>SceneComplete</title>
+    <title>Vysics</title>
 
     <meta content="SceneComplete is an open-world 3D scene completion system, that constructs a complete, segmented, 3D model of a scene from a single RGB-D image."
         name="description" />
@@ -53,34 +53,37 @@
 <body>
     <div class="section">
         <div class="container">
-            <h1 class="title">SceneComplete</h1>
-            <h1 class="subheader">Open-World 3D Scene Completion in
-                Complex Real World Environments for Robot Manipulation</h1>
+            <h1 class="title">Vysics</h1>
+            <h1 class="subheader">Object Reconstruction Under Occlusion by
+                Fusing Vision and Contact-Rich Physics</h1>
 
             <div class="publication-authors" style="font-size:1.25rem;">
                 <span class="author-block">
-                    <a href="https://skymanaditya1.github.io/" target="_blank">Aditya
-                        Agarwal</a><sup>1</sup>,</span>
+                    <a href="https://scholar.google.com/citations?user=lVj0WaQAAAAJ&hl=en" target="_blank">Bibit Bianchini
+                    </a><sup>1</sup>,</span>
                 <span class="author-block">
                     <span class="author-block">
-                        <a href="https://vanhalen42.github.io/" target="_blank">Gaurav
-                            Singh</a><sup>2</sup>,</span>
+                        <a href="https://scholar.google.com/citations?user=70CbUXwAAAAJ&hl=en" target="_blank">Minghan Zhu
+                        </a><sup>1</sup>,</span>
                     <span class="author-block">
-                        <a href="https://bipashasen.github.io/" target="_blank">Bipasha Sen</a><sup>1</sup>,
+                        <a href="https://scholar.google.com/citations?user=hXb_RHoAAAAJ&hl=en" target="_blank">Mengti Sun</a><sup>2</sup>,
                     </span>
                     <span class="author-block">
-                        <a href="https://people.csail.mit.edu/tlp/" target="_blank">Tomás
-                            Lozano-Pérez</a><sup>1</sup>,
+                        <a href="https://scholar.google.com/citations?user=_6AHV9QAAAAJ&hl=en" target="_blank">Bowen Jiang</a><sup>1</sup>,
                     </span>
                     <span class="author-block">
-                        <a href="https://www.csail.mit.edu/person/leslie-kaelbling" target="_blank">Leslie
-                            Pack Kaelbling</a><sup>1</sup>
+                        <a href="https://www.cis.upenn.edu/~cjtaylor/" target="_blank">Camillo J. Taylor
+                        </a><sup>1</sup>
+                    </span>
+                    <span class="author-block">
+                        <a href="https://www.grasp.upenn.edu/people/michael-posa/" target="_blank">Michael Posa
+                        </a><sup>1</sup>
                     </span>
             </div>
             <br>
             <div class="publication-authors" style="font-size:1.25rem;">
-                <span class="author-block"><sup>1</sup>MIT CSAIL, </span>
-                <span class="author-block"><sup>2</sup>IIIT Hyderabad</span>
+                <span class="author-block"><sup>1</sup>General Robotics, Automation, Sensing and Perception(GRASP) Laboratory, University of Pennsylvania, </span>
+                <span class="author-block"><sup>2</sup>Amazon Robotics</span>
             </div>
             <br>
 
@@ -94,11 +97,10 @@
                             srcset="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01-p-500.png 500w, https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png 672w"
                             class="icon-img" /></a></div>
                 <!-- TODO: Update code link -->
-                <div class="base-col icon-col"><a href="https://github.com/scenecomplete/SceneComplete" target="_blank" ><img
+                <div class="base-col icon-col"><a href="https://github.com/ebianchi/bundlenets/tree/structural-changes" target="_blank" ><img
                             src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cae3b53b42ebb3dd4175a82_68747470733a2f2f7777772e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f6f637469636f6e732f313032342f6d61726b2d6769746875622d3235362e706e67.png"
                             alt="GitHub" class="icon-img github-img-icon" /></a></div>
-                <!-- TODO: Update data link -->
-                
+                <!-- TODO: Update Youtube link -->
                 <div class="column-2 base-col icon-col"><a href="https://youtu.be/Tuzhn4HWiL0" target="_blank" class="link-block"><img
                             src="./static/logos/youtube_1.svg"
                             alt="paper" class="icon-img data-img-icon" /></a></div>
@@ -116,13 +118,14 @@
             </div>
             <h1 class="tldr">
                 <b>TL;DR</b>:
-                <u>SceneComplete</u> is an open-world 3D scene completion system, that constructs a complete, segmented, 3D model of a scene from a single RGB-D image.
+                <u>Vysics</u> is a vision-and-physics framework for a robot to build an expressive geometry and dynamics
+                model of a single rigid body, using a seconds-long RGBD video and the robot’s proprioception.
             </h1>
-            <br>
-            <video id="main-video" autobuffer muted autoplay loop>
-                <source id="mp4" src="./static/images/scene_complete_banner.mp4" type="video/mp4">
-            </video>
-            <br>
+<!--            <br>-->
+<!--            <video id="main-video" autobuffer muted autoplay loop>-->
+<!--                <source id="mp4" src="./static/images/scene_complete_banner.mp4" type="video/mp4">-->
+<!--            </video>-->
+<!--            <br>-->
             <br>
             <br>
             <div class="base-row add-top-padding">
@@ -163,7 +166,29 @@
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Abstract</h1>
                 <p class="paragraph">
-                    Careful robot manipulation in every-day cluttered environments requires an accurate understanding of the 3D scene, in order to grasp and place objects stably and reliably and to avoid mistakenly colliding with other objects. In general, we must construct such a 3D interpretation of a complex scene based on limited input, such as a single RGB-D image. We describe SceneComplete, a system for constructing a complete, segmented, 3D model of a scene from a single view. It provides a novel pipeline for composing general-purpose pretrained perception modules (vision-language, segmentation, image-inpainting, image-to-3D, and pose-estimation) to obtain high-accuracy results. We demonstrate its accuracy and effectiveness with respect to ground-truth models in a large benchmark dataset and show that its accurate whole-object reconstruction enables robust grasp proposal generation, including for a dexterous hand.
+                    We introduce <b>Vysics</b>, a vision-and-physics frame-
+                    work for a robot to build an expressive geometry and dynamics
+                    model of a single rigid body, using a seconds-long RGBD video
+                    and the robot’s proprioception. While the computer vision com-
+                    munity has built powerful visual 3D perception algorithms, clut-
+                    tered environments with heavy occlusions can limit the visibility
+                    of objects of interest. However, observed motion of partially oc-
+                    cluded objects can imply physical interactions took place, such as
+                    contact with a robot or the environment. These inferred contacts
+                    can supplement the visible geometry with “physible geometry,”
+                    which best explains the observed object motion through physics.
+                    Vysics uses a vision-based tracking and reconstruction method,
+                    BundleSDF, to estimate the trajectory and the visible geometry
+                    from an RGBD video, and an odometry-based model learning
+                    method, Physics Learning Library (PLL), to infer the “physible”
+                    geometry from the trajectory through implicit contact dynamics
+                    optimization. The visible and “physible” geometries jointly factor
+                    into optimizing a signed distance function (SDF) to represent the
+                    object shape. Vysics does not require pretraining, nor tactile
+                    or force sensors. Compared with vision-only methods, Vysics
+                    yields object models with higher geometric accuracy and better
+                    dynamics prediction in experiments where the object interacts
+                    with the robot and the environment under heavy occlusion.
                 </p>
             </div>
             
@@ -176,7 +201,12 @@
                     <source src="./static/images/scenecomplete_architecture.mp4" type="video/mp4">
                 </video>
                 <p class="paragraph">
-                    The figure illustrates the overall design of <b>SceneComplete</b>. It takes a single RGB-D image as input and produces a set of object meshes that are registered with the input 3D scan. The objective is to provide an accurate 3D reconstruction of the scene, in terms of segmentation into rigid components, and the shape of each component, expressed as a mesh.
+                    The figure illustrates the overall design of <b>Vysics</b>. Vysics from input RGBD videos and
+                    robot states (left) to URDF output (right). Its core components are BundleSDF for vision-based
+                    tracking and shape reconstruction, and PLL for physics-inspired dynamics learning. Beyond the insights
+                    that led to this systems integration, our main contribution lies in how Vysics incorporates
+                    these two powerful tools together such that they supervise each other and output an object dynamics
+                    model, featuring geometry informed by both vision and contact.
                 </p>
             </div>
 
@@ -301,12 +331,12 @@
                 <br>
                 <br>
 
-                <div class="base-row add-top-padding">
-                    <h1>Evaluating SceneComplete</h1>
-                    <p class="paragraph">
-                        We evaluate <b>SceneComplete</b> on the challenging GraspNet-1Billion dataset and observe that the parallel jaw grasps sampled using antipodal grasp sampling enable more robust predictions with fewer collisions on the ground truth scene. We also demnstrate dexterous grasps using both Shadow Hands and Allegro Hands, highlighting improved manipulation of complex objects with complete 3D reconstructions.
-                    </p>
-                </div>
+<!--                <div class="base-row add-top-padding">-->
+<!--                    <h1>Evaluating SceneComplete</h1>-->
+<!--                    <p class="paragraph">-->
+<!--                        We evaluate <b>SceneComplete</b> on the challenging GraspNet-1Billion dataset and observe that the parallel jaw grasps sampled using antipodal grasp sampling enable more robust predictions with fewer collisions on the ground truth scene. We also demnstrate dexterous grasps using both Shadow Hands and Allegro Hands, highlighting improved manipulation of complex objects with complete 3D reconstructions.-->
+<!--                    </p>-->
+<!--                </div>-->
 
                 <img id="pipeline-img" src="./static/images/qualitative.png" />
 
@@ -314,13 +344,49 @@
                 <br>
 
                 <div class="base-row add-top-padding">
-                    <h1>SceneComplete enables dexterous grasping</h1>
+                    <h1>Geometry Reconstruction</h1>
                     <p class="paragraph">
-                        A significant test of the utility of our approach is whether
-                        the individual object reconstructions support the computation
-                        of good dexterous grasps for a multi-fingered hand. We show that <b>SceneComplete</b> enables dexterous grasping by generating stable grasp proposals for a multi-fingered hand. We instantiate Isaac Gym with the selected hand and the ground truth object mesh and lift the hand within the simulation to detect whether the object is dropped using PhysX as the physics engine.
+                        A quantitative comparison of the geometric reconstruction
+                        between Vysics and others is provided in Table I, averaged
+                        per object and over all objects. [Place holder] compares example-
+                        by-example with BundleSDF, the only geometric baseline
+                        that, like Vysics, does not require a pretrained model on a
+                        large object dataset.
                     </p>
                 </div>
+
+            <div class="base-row add-top-padding">
+                <h1>Dynamic Predictions</h1>
+                <p class="paragraph">
+                    We further use dynamics predictions to show that the
+                    geometry estimated by our method better explains the observed
+                    trajectory. [Place holder] shows the average position and rotation
+                    errors when predicting the entire length of the original trajectory
+                    as an open-loop rollout. The trajectories range in length
+                    from 3 to 18 seconds. Compared with the shape estimated
+                    by the vision-only method, the geometry estimated by our
+                    method enabled much smaller simulation pose errors across
+                    the dataset.
+                </p>
+            </div>
+
+            <div class="base-row add-top-padding">
+                <h1>Data-Driven Generative Baselines</h1>
+                <p class="paragraph">
+                    While the objects are heavily occluded in the camera
+                    view, one may wonder if 3D foundation models, which learn
+                    prior knowledge of the shape of typical objects from a large
+                    amount of data, may recover the occluded geometry in a
+                    generative way. We tested a few single-view reconstruction
+                    models, and found that they typically assume
+                    an unobstructed view of the object and do not generate a
+                    complete shape when given a partially occluded view. See
+                    Figure 12 for an example. Foundation models are not yet a
+                    hand-waving solution to shape reconstruction under occlusion,
+                    but it could be valuable to incorporate a data-based prior in
+                    our framework in the future.
+                </p>
+            </div>
                 
                 <div class="columns is-centered">
 
