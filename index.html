@@ -60,11 +60,11 @@
             <div class="publication-authors" style="font-size:1.25rem;">
                 <span class="author-block">
                     <a href="https://scholar.google.com/citations?user=lVj0WaQAAAAJ&hl=en" target="_blank">Bibit Bianchini
-                    </a><sup>1</sup>,</span>
+                    </a><sup>*1</sup>,</span>
                 <span class="author-block">
                     <span class="author-block">
                         <a href="https://scholar.google.com/citations?user=70CbUXwAAAAJ&hl=en" target="_blank">Minghan Zhu
-                        </a><sup>1</sup>,</span>
+                        </a><sup>*1</sup>,</span>
                     <span class="author-block">
                         <a href="https://scholar.google.com/citations?user=hXb_RHoAAAAJ&hl=en" target="_blank">Mengti Sun</a><sup>2</sup>,
                     </span>
@@ -82,8 +82,11 @@
             </div>
             <br>
             <div class="publication-authors" style="font-size:1.25rem;">
-                <span class="author-block"><sup>1</sup>General Robotics, Automation, Sensing and Perception(GRASP) Laboratory, University of Pennsylvania, </span>
-                <span class="author-block"><sup>2</sup>Amazon Robotics</span>
+                <span class="author-block" style="display:block"><sup>*</sup>The first two authors contributed equally to this work.</span>
+
+                <span class="author-block" style="display:block"><sup>1</sup>General Robotics, Automation, Sensing and Perception (GRASP) Laboratory, University of Pennsylvania </span>
+
+                <span class="author-block" style="display:block"><sup>2</sup>Amazon Robotics</span>
             </div>
             <br>
 
@@ -104,7 +107,7 @@
                 <div class="column-2 base-col icon-col"><a href="https://youtu.be/Tuzhn4HWiL0" target="_blank" class="link-block"><img
                             src="./static/logos/youtube_1.svg"
                             alt="paper" class="icon-img data-img-icon" /></a></div>
-            </div>            
+            </div>
             <div class="link-labels base-row">
                 <div class="base-col icon-col">
                     <strong class="link-labels-text">Paper</strong>
@@ -166,14 +169,10 @@
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Abstract</h1>
                 <p class="paragraph">
-                    We introduce <b>Vysics</b>, a vision-and-physics frame-
-                    work for a robot to build an expressive geometry and dynamics
+                    We introduce <b>Vysics</b>, a vision-and-physics framework for a robot to build an expressive geometry and dynamics
                     model of a single rigid body, using a seconds-long RGBD video
-                    and the robot’s proprioception. While the computer vision com-
-                    munity has built powerful visual 3D perception algorithms, clut-
-                    tered environments with heavy occlusions can limit the visibility
-                    of objects of interest. However, observed motion of partially oc-
-                    cluded objects can imply physical interactions took place, such as
+                    and the robot's proprioception. While the computer vision community has built powerful visual 3D perception algorithms, cluttered environments with heavy occlusions can limit the visibility
+                    of objects of interest. However, observed motion of partially occluded objects can imply physical interactions took place, such as
                     contact with a robot or the environment. These inferred contacts
                     can supplement the visible geometry with “physible geometry,”
                     which best explains the observed object motion through physics.
@@ -191,18 +190,21 @@
                     with the robot and the environment under heavy occlusion.
                 </p>
             </div>
-            
+
             <!-- <div>
                 <img id="splash-fig" src="data/splash.jpg" />
             </div> -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Architecture</h1>
                 <video id="arch-video" autoplay muted loop playsinline height="100%">
-                    <source src="./static/images/scenecomplete_architecture.mp4" type="video/mp4">
+                    <source src="./static/images/vysics_architecture_small.mp4" type="video/mp4">
                 </video>
                 <p class="paragraph">
-                    The figure illustrates the overall design of <b>Vysics</b>. Vysics from input RGBD videos and
-                    robot states (left) to URDF output (right). Its core components are BundleSDF for vision-based
+                    The figure illustrates the overall design of <b>Vysics</b> from input RGBD videos and
+                    robot states (left) to URDF output (right). Its core components are
+                    <!-- TODO:  link to BundleSDF? -->
+                    <!-- <a href="https://bundlesdf.github.io/" target="_blank">BundleSDF</a> -->
+                    BundleSDF for vision-based
                     tracking and shape reconstruction, and PLL for physics-inspired dynamics learning. Beyond the insights
                     that led to this systems integration, our main contribution lies in how Vysics incorporates
                     these two powerful tools together such that they supervise each other and output an object dynamics
@@ -278,7 +280,7 @@
                     <button class="slide-arrow" id="slide-arrow-prev" onclick="slide_left()">
                         &#8249;
                     </button>
-                    
+
                     <div class="base-row thumbnail-row" , id="thumbnails-scroll">
                         <div class="base-col thumbnail-col">
                             <button class="thumbnail-btn" id="thumb-5">
@@ -387,7 +389,7 @@
                     our framework in the future.
                 </p>
             </div>
-                
+
                 <div class="columns is-centered">
 
                     <!-- Relocalization (particle filter) -->
@@ -401,7 +403,7 @@
                         </div>
                     </div>
                     <!--/ Relocalization (particle filter) -->
-                
+
                     <!-- Text queries via CLIP / GPT-4 -->
                     <div class="column">
                         <div class="content">
@@ -416,15 +418,16 @@
 
                 <div class="citation add-top-padding">
                     <h1 id="abstract"> Citation </h1>
-                    <!-- <p> If you find this work useful, please consider citing: (bibtex) </p> -->
-                    <pre id="codecell0">@misc{agarwal2024scenecompleteopenworld3dscene,
-&nbsp;title={SceneComplete: Open-World 3D Scene Completion in Complex Real World Environments for Robot Manipulation}, 
-&nbsp;author={Aditya Agarwal and Gaurav Singh and Bipasha Sen and Tomás Lozano-Pérez and Leslie Pack Kaelbling},
-&nbsp;year={2024},
-&nbsp;eprint={2410.23643},
-&nbsp;archivePrefix={arXiv},
-&nbsp;primaryClass={cs.RO},
-&nbsp;url={https://arxiv.org/abs/2410.23643}, 
+                    <p> If you find this work useful, please consider citing: (bibtex) </p>
+                    <pre id="codecell0">@inproceedings{bianchini2025vysics,
+&nbsp;title={Vysics: Object Reconstruction Under Occlusion by Fusing Vision and Contact-Rich Physics},
+&nbsp;author={Bibit Bianchini and Minghan Zhu and Mengti Sun and Bowen Jiang and Camillo J. Taylor and Michael Posa},
+&nbsp;year={2025},
+&nbsp;month={june},
+&nbsp;arxiv={TODO},
+&nbsp;booktitle={Robotics: Science and Systems (RSS)},
+&nbsp;website={https://vysics.github.io/},
+&nbsp;url={https://arxiv.org/abs/TODO}
 }
 </pre>
                 </div>
@@ -434,15 +437,15 @@
 
     		
     <p style="text-align:left;font-size:small;padding: 1%;">
-        Source code for this page was taken from <a href="https://www.lerf.io/">LERF's website</a>. 
+        Source code for this page was taken from <a href="https://www.lerf.io/">LERF's website</a>.
     </p>
-  
+
 
     <script>
         const carousel = document.querySelector('.carousel-slider');
         const videoContainers = document.querySelectorAll('.video-container');
         let currentPosition = 0;
-  
+
         const leftButton = document.querySelector('.carousel-button.left');
         leftButton.addEventListener('click', () => {
             if (currentPosition - 1 < 0) {
@@ -450,10 +453,10 @@
             } else {
                 currentPosition = currentPosition - 1;
             }
-            
+
             carousel.scrollTo({ left: videoContainers[currentPosition].offsetLeft, behavior: 'smooth' });
         });
-  
+
         const rightButton = document.querySelector('.carousel-button.right');
         rightButton.addEventListener('click', () => {
             if (currentPosition + 1 > videoContainers.length - 1) {
