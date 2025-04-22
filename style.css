@@ -935,6 +935,11 @@ iframe:not(.show) {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+.result-image-no-border {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+}
 
 .result-video {
     width: 320px;
@@ -942,4 +947,10 @@ iframe:not(.show) {
     object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-video-no-border {
+    width: 320px;
+    height: auto;
+    object-fit: contain;
 }

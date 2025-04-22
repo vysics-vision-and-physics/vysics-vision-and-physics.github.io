@@ -119,6 +119,12 @@
                     <strong class="link-labels-text">Video</strong>
                 </div>
             </div>
+            <br>
+            <div class="base-row add-top-padding">
+                <video id="arch-video" autoplay muted loop playsinline height="100%">
+                    <source src="./static/images/vysics_intro_small.mp4" type="video/mp4">
+                </video>
+            </div>
             <h1 class="tldr">
                 <b>TL;DR</b>:
                 <u>Vysics</u> is a vision-and-physics framework for a robot to build an expressive geometry and dynamics
@@ -130,8 +136,7 @@
 <!--            </video>-->
 <!--            <br>-->
             <br>
-            <br>
-            <div class="base-row add-top-padding">
+            <!-- <div class="base-row add-top-padding">
                 <h1 id="abstract">Experiments</h1>
             </div>
             <nav>
@@ -165,7 +170,7 @@
                     <button class="carousel-button left" type="button">&lt;</button>
                     <button class="carousel-button right" type="button">&gt;</button>
                 </div>
-            </nav>
+            </nav> -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Abstract</h1>
                 <p class="paragraph">
@@ -194,6 +199,7 @@
             <!-- <div>
                 <img id="splash-fig" src="data/splash.jpg" />
             </div> -->
+            <br>
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Architecture</h1>
                 <video id="arch-video" autoplay muted loop playsinline height="100%">
@@ -339,58 +345,78 @@
                 <div class="results-grid">
                     <!-- Row 1 -->
                     <div class="result-row">
-                        <img src="./static/images/object_photos/bakingbox.png" alt="Object 1" class="result-image">
-                        <video autoplay loop muted playsinline class="result-video">
-                            <source src="./static/images/bakingbox_3/robotocc_bakingbox_3_bsdf_00_00-t11_1_mesh.mp4" type="video/mp4">
+                        <img src="./static/images/object_photos/bakingbox.png"
+                            alt="Object 1" class="result-image-no-border">
+                        <video autoplay loop muted playsinline
+                            class="result-video-no-border">
+                            <source src="./static/images/bakingbox_3/robotocc_bakingbox_3_bsdf_00_00-t11_1_mesh.mp4"
+                                type="video/mp4">
                         </video>
                     </div>
 
                     <!-- Row 2 -->
                     <div class="result-row">
-<!--                        TODO: Replce with object images-->
-                        <img src="./static/images/object_photos/bottle.png" alt="Object 2" class="result-image">
-                        <video autoplay loop muted playsinline class="result-video">
-                            <source src="./static/images/bottle_1/robotocc_bottle_1_bsdf_00_00-t09d_1_mesh.mp4" type="video/mp4">
+                        <img src="./static/images/object_photos/bottle.png"
+                            alt="Object 2" class="result-image-no-border">
+                        <video autoplay loop muted playsinline
+                            class="result-video-no-border">
+                            <source src="./static/images/bottle_1/robotocc_bottle_1_bsdf_00_00-t09d_1_mesh.mp4"
+                                type="video/mp4">
                         </video>
                     </div>
 
                     <!-- Row 3 -->
                     <div class="result-row">
-                        <img src="./static/images/object_photos/egg.png" alt="Object 3" class="result-image">
-                        <video autoplay loop muted playsinline class="result-video">
-                            <source src="./static/images/egg_6/robotocc_egg_6_bsdf_00_00-t11_1_mesh.mp4" type="video/mp4">
+                        <img src="./static/images/object_photos/egg.png"
+                            alt="Object 3" class="result-image-no-border">
+                        <video autoplay loop muted playsinline
+                            class="result-video-no-border">
+                            <source src="./static/images/egg_6/robotocc_egg_6_bsdf_00_00-t11_1_mesh.mp4"
+                                type="video/mp4">
                         </video>
                     </div>
 
                     <!-- Row 4 -->
                     <div class="result-row">
-                        <img src="./static/images/object_photos/milk.png" alt="Object 4" class="result-image">
-                        <video autoplay loop muted playsinline class="result-video">
-                            <source src="./static/images/milk_8/robotocc_milk_8_bsdf_00_00-t11_1_mesh.mp4" type="video/mp4">
+                        <img src="./static/images/object_photos/milk.png"
+                            alt="Object 4" class="result-image-no-border">
+                        <video autoplay loop muted playsinline
+                            class="result-video-no-border">
+                            <source src="./static/images/milk_8/robotocc_milk_8_bsdf_00_00-t11_1_mesh.mp4"
+                                type="video/mp4">
                         </video>
                     </div>
 
                     <!-- Row 5 -->
                     <div class="result-row">
-                        <img src="./static/images/object_photos/oatly.png" alt="Object 5" class="result-image">
-                        <video autoplay loop muted playsinline class="result-video">
-                            <source src="./static/images/oatly_11/robotocc_oatly_11_bsdf_00_00-t11_1_mesh.mp4" type="video/mp4">
+                        <img src="./static/images/object_photos/oatly.png"
+                            alt="Object 5" class="result-image-no-border">
+                        <video autoplay loop muted playsinline
+                            class="result-video-no-border">
+                            <source src="./static/images/oatly_11/robotocc_oatly_11_bsdf_00_00-t11_1_mesh.mp4"
+                                type="video/mp4">
                         </video>
                     </div>
 
                     <!-- Row 6 -->
                     <div class="result-row">
-                        <img src="./static/images/object_photos/styrofoam.png" alt="Object 6" class="result-image">
-                        <video autoplay loop muted playsinline class="result-video">
-                            <source src="./static/images/styrofoam_1/robotocc_styrofoam_1_bsdf_00_00-t09d_1_mesh.mp4" type="video/mp4">
+                        <img src="./static/images/object_photos/styrofoam.png"
+                            alt="Object 6" class="result-image-no-border">
+                        <video autoplay loop muted playsinline
+                            class="result-video-no-border">
+                            <source src="./static/images/styrofoam_1/robotocc_styrofoam_1_bsdf_00_00-t09d_1_mesh.mp4"
+                                type="video/mp4">
                         </video>
                     </div>
 
                     <!-- Row 7 -->
                     <div class="result-row">
-                        <img src="./static/images/object_photos/toblerone.png" alt="Object 7" class="result-image">
-                        <video autoplay loop muted playsinline class="result-video">
-                            <source src="./static/images/toblerone_11/robotocc_toblerone_11_bsdf_00_00-t11_1_mesh.mp4" type="video/mp4">
+                        <img src="./static/images/object_photos/toblerone.png"
+                            alt="Object 7" class="result-image-no-border">
+                        <video autoplay loop muted playsinline
+                            class="result-video-no-border">
+                            <source src="./static/images/toblerone_11/robotocc_toblerone_11_bsdf_00_00-t11_1_mesh.mp4"
+                            type="video/mp4">
                         </video>
                     </div>
                 </div>
