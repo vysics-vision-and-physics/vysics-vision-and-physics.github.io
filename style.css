@@ -232,6 +232,10 @@ body {
     margin-bottom: 10px;
 }
 
+#geometry-img {
+    width: 100%;
+}
+
 #cf-img {
     width: 70%;
     /* max-width: 560px; */

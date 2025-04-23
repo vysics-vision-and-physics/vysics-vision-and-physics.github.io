@@ -145,6 +145,7 @@
 
             <br>
 
+            <!-- Main video -->
             <div class="base-row add-top-padding">
                 <video id="main-video" autobuffer muted autoplay loop>
                     <source id="mp4"
@@ -161,6 +162,7 @@
 
             <br>
 
+            <!-- Abstract -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Abstract</h1>
                 <p class="paragraph">
@@ -186,10 +188,9 @@
                 </p>
             </div>
 
-            <!-- <div>
-                <img id="splash-fig" src="data/splash.jpg" />
-            </div> -->
             <br>
+
+            <!-- Architecture -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Architecture</h1>
                 <video id="arch-video" autoplay muted loop playsinline height="100%">
@@ -210,6 +211,7 @@
 
             <br>
 
+            <!-- Geometry results -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Geometry Results</h1>
                 <nav>
@@ -302,20 +304,34 @@
                     between a local region of the learned shape to the nearest
                     surface on the ground truth geometry:  red is > 3cm, and
                     dark blue is < 5mm.
-                    <br>
-                    <br>
+                </p>
+
+                <div class="columns is-centered">
+                    <div class="column">
+                        <img id="geometry-img"
+                            src="./static/images/geometry_chamfer.png" />
+                    </div>
+                    <div class="column">
+                        <img id="geometry-img"
+                            src="./static/images/geometry_iou.png" />
+                    </div>
+                </div>
+
+                <p class="paragraph">
                     Due to severe occlusion in the RGBD videos, vision-based
-                    reconstruction yields significant errors. Our method
-                    recovers the occluded geometry through physics-based
-                    reasoning over the observed trajectories, substantially and
-                    consistently improving the geometric accuracy in terms of
-                    both the surface-based metric, chamfer distance, and the
-                    volume-based metric, IoU.
+                    reconstruction yields significant errors.  For every example
+                    in our dataset, our method improves the reconstructed
+                    geometry by recovering the occluded geometry through
+                    physics-based reasoning over the observed trajectories.
+                    The plots above show substantial and consistent improvements
+                    in terms of both the surface-based metric (chamfer distance)
+                    and the volume-based metric (IoU).
                 </p>
             </div>
 
             <br>
 
+            <!-- Geometry reconstruction -->
             <div class="base-row add-top-padding">
                 <h1>Geometry Reconstruction</h1>
                 <p class="paragraph">
@@ -330,6 +346,7 @@
 
             <br>
 
+            <!-- Dynamics predictions -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Dynamics Predictions</h1>
                 <nav>
@@ -451,6 +468,7 @@
 
             <br>
 
+            <!-- Data-driven generative baselines -->
             <div class="base-row add-top-padding">
                 <h1>Data-Driven Generative Baselines</h1>
                 <p class="paragraph">
@@ -467,7 +485,6 @@
                     but it could be valuable to incorporate a data-based prior in
                     our framework in the future.
                 </p>
-            </div>
 
                 <div class="columns is-centered">
 
@@ -494,22 +511,25 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="citation add-top-padding">
-                    <h1 id="abstract"> Citation </h1>
-                    <p> If you find this work useful, please consider citing: (bibtex) </p>
-                    <pre id="codecell0">@inproceedings{bianchini2025vysics,
+            <br>
+
+            <!-- Citation -->
+            <div class="citation add-top-padding">
+                <h1 id="abstract"> Citation </h1>
+                <p> If you find this work useful, please consider citing: (bibtex) </p>
+                <pre id="codecell0">@inproceedings{bianchini2025vysics,
 &nbsp;title={Vysics: Object Reconstruction Under Occlusion by Fusing Vision and Contact-Rich Physics},
 &nbsp;author={Bibit Bianchini and Minghan Zhu and Mengti Sun and Bowen Jiang and Camillo J. Taylor and Michael Posa},
 &nbsp;year={2025},
-&nbsp;month={june},
-&nbsp;arxiv={TODO},
+&nbsp;month={june}, <!-- &nbsp;arxiv={TODO}, -->
 &nbsp;booktitle={Robotics: Science and Systems (RSS)},
-&nbsp;website={https://vysics.github.io/},
-&nbsp;url={https://arxiv.org/abs/TODO}
+&nbsp;website={https://vysics.github.io/}, <!-- &nbsp;url={https://arxiv.org/abs/TODO} -->
 }
 </pre>
-                </div>
+            </div>
+
             </div>
         </div>
     </div>
