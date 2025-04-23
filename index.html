@@ -302,6 +302,15 @@
                     between a local region of the learned shape to the nearest
                     surface on the ground truth geometry:  red is > 3cm, and
                     dark blue is < 5mm.
+                    <br>
+                    <br>
+                    Due to severe occlusion in the RGBD videos, vision-based
+                    reconstruction yields significant errors. Our method
+                    recovers the occluded geometry through physics-based
+                    reasoning over the observed trajectories, substantially and
+                    consistently improving the geometric accuracy in terms of
+                    both the surface-based metric, chamfer distance, and the
+                    volume-based metric, IoU.
                 </p>
             </div>
 
@@ -405,15 +414,38 @@
                 </nav>
 
                 <p class="paragraph">
-                    We further use dynamics predictions to show that the
-                    geometry estimated by our method better explains the
-                    observed trajectory. [Place holder] shows the average
-                    position and rotation errors when predicting the entire
-                    length of the original trajectory as an open-loop rollout.
-                    The trajectories range in length from 3 to 18 seconds.
-                    Compared with the shape estimated by the vision-only method,
-                    the geometry estimated by our method enabled much smaller
-                    simulation pose errors across the dataset.
+                    Because Vysics uses physics reasoning to inform the
+                    recovered geometry, it enables accurate dynamics predictions
+                    when predicting the original trajectory.  To do this, we
+                    simulate the recorded robot commands in a simulator with the
+                    learned object model, then we compare the resulting object
+                    trajectory to the BundleSDF trajectory estimate.  The videos
+                    above show the simulation results of Vysics models compared
+                    to vision-only geometry (from BundleSDF), physics-only
+                    geometry (from PLL), and the ground truth geometry (from a
+                    3D scanner).
+                </p>
+
+                <img id="dynamics-img" src="./static/images/dynamics_cdf.png" />
+
+                <p class="paragraph">
+                    The plot above shows the average position and rotation
+                    errors when predicting the entire length of the original
+                    trajectory as an open-loop rollout, averaged for every
+                    example and result in the dataset. The trajectories range in
+                    length from 3 to 18 seconds.  We point out that even the
+                    ground truth geometry baseline is imperfect, despite using
+                    essentially perfect geometry, due to inaccurate modeling
+                    assumptions such as object rigidity and the divergent nature
+                    of the dynamics in many of our robot interactions.  Vysics
+                    and PLL perform closely to this baseline, though Vysics is
+                    moderately worse in orientation divergence.  While most of
+                    the dynamics performance by PLL is retained in Vysics, it is
+                    unsurprising to see a slight performance drop, given PLL
+                    optimizes only for physics accuracy while Vysics balances
+                    with visual objectives.  The vision-only baseline is the
+                    least performant in both position and orientation rollout
+                    accuracy.
                 </p>
             </div>
 
