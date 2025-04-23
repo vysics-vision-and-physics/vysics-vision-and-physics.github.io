@@ -160,41 +160,7 @@
             </h1>
 
             <br>
-            <!-- <div class="base-row add-top-padding">
-                <h1 id="abstract">Experiments</h1>
-            </div>
-            <nav>
-                <div class="carousel-slider-wrapper">
-                    <div class = "carousel-slider">
 
-                        <div class="video-container">
-                            <video  loop playsinline muted autoplay>
-                                <source autoplay src="./static/images/carousel/compressed_carousel2.mp4" type="video/mp4">
-                            </video>
-                        </div>
-
-                        <div class="video-container">
-                            <video  loop playsinline muted autoplay>
-                                <source autoplay src="./static/images/carousel/compressed_carousel3.mp4" type="video/mp4">
-                            </video>
-                        </div>
-
-                        <div class="video-container">
-                            <video  loop playsinline muted autoplay>
-                                <source autoplay src="./static/images/carousel/compressed_carousel4.mp4" type="video/mp4">
-                            </video>
-                        </div>
-
-                        <div class="video-container">
-                            <video  loop playsinline muted autoplay>
-                                <source autoplay src="./static/images/carousel/compressed_carousel1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <button class="carousel-button left" type="button">&lt;</button>
-                    <button class="carousel-button right" type="button">&gt;</button>
-                </div>
-            </nav> -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Abstract</h1>
                 <p class="paragraph">
@@ -245,130 +211,112 @@
             <br>
 
             <div class="base-row add-top-padding">
+                <h1 id="abstract">Geometry Results</h1>
+                <nav>
+                    <div class="carousel-slider-wrapper">
+                        <div class = "carousel-slider">
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel/geometry_milk_3_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel/geometry_oatly_11_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel/geometry_styrofoam_1_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel/geometry_egg_6_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel/geometry_bottle_1_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel/geometry_toblerone_11_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel/geometry_bakingbox_3_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel/geometry_milk_8_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel/geometry_oatly_6_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <button class="carousel-button left" type="button">&lt;</button>
+                        <button class="carousel-button right" type="button">&gt;</button>
+                    </div>
+                </nav>
+
+                <p class="paragraph">
+                    Vysics trains on a seconds-long RGBD video and the robot's
+                    proprioception.  Each example above shows the input video,
+                    a photo of the object, and the reconstructed geometry from
+                    Vysics (which fuses vision and physics) and BundleSDF (which
+                    uses vision only).  The mesh coloring indicates the distance
+                    between a local region of the learned shape to the nearest
+                    surface on the ground truth geometry:  red is > 3cm, and
+                    dark blue is < 5mm.
+                </p>
+            </div>
+
+            <!-- <div class="base-row add-top-padding">
                 <h1 id="abstract">Results</h1>
             </div>
             <div class="base-row">
 
                 <div class="base-row add-top-padding">
-
-<!--                    <h3 class="results-text">-->
-<!--                        <b>Click the thumbnails below to interact with the reconstructed 3D scenes.</b>-->
-<!--                    </h3>-->
-                </div>
-
-<!--                <div id="iframe-container" class="iframe-container">-->
-<!--                    <model-viewer id="demo1" src="./static/3d/scene1_v2.glb" shadow-intensity="1"-->
-<!--                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar-->
-<!--                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"-->
-<!--                        class="iframe"-->
-<!--                        style="display: none;"></model-viewer>-->
-<!--                    <model-viewer id="demo2" src="./static/3d/scene17.glb" shadow-intensity="1"-->
-<!--                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar-->
-<!--                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"-->
-<!--                        class="iframe"-->
-<!--                        style="display: none;"></model-viewer>-->
-<!--                    <model-viewer id="demo3" src="./static/3d/scene22.glb" shadow-intensity="1"-->
-<!--                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar-->
-<!--                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"-->
-<!--                        class="iframe"-->
-<!--                        style="display: none;"></model-viewer>-->
-<!--                    <model-viewer id="demo4" src="./static/3d/scene23.glb" shadow-intensity="1"-->
-<!--                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar-->
-<!--                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"-->
-<!--                        class="iframe"-->
-<!--                        style="display: none;"></model-viewer>-->
-<!--                    <model-viewer id="demo5" src="./static/3d/scene36.glb" shadow-intensity="1"-->
-<!--                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar-->
-<!--                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"-->
-<!--                        class="iframe"-->
-<!--                        style="display: none;"></model-viewer>-->
-<!--                    <model-viewer id="demo6" src="./static/3d/scene_20_teaser.glb" shadow-intensity="1"-->
-<!--                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar-->
-<!--                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"-->
-<!--                        class="iframe"-->
-<!--                        ></model-viewer>-->
-<!--                    <model-viewer id="demo7" src="./static/3d/scene30.glb" shadow-intensity="1"-->
-<!--                        camera-controls touch-action="pan-y" camera-orbit="45deg 45deg 120m" ar-->
-<!--                        ar-modes="webxr scene-viewer quick-look" ar-status="not-presenting"-->
-<!--                        class="iframe"-->
-<!--                        style="display: none;"></model-viewer>-->
-<!--                </div>-->
-
-
-<!--                <div id="main-results" onclick="play_pause()">-->
-<!--                    <canvas id="canvas"></canvas>-->
-<!--                    <canvas id="canvas-overlay"></canvas>-->
-<!--                </div>-->
-
-
-<!--                <div class="base-row" style="display: inline-block">-->
-<!--                    <button class="slide-arrow" id="slide-arrow-prev" onclick="slide_left()">-->
-<!--                        &#8249;-->
-<!--                    </button>-->
-
-<!--                    <div class="base-row thumbnail-row" , id="thumbnails-scroll">-->
-<!--                        <div class="base-col thumbnail-col">-->
-<!--                            <button class="thumbnail-btn" id="thumb-5">-->
-<!--                                <img src="./static/images/thumbnails/scene6.png" alt="paper" class="thumbnails" />-->
-<!--                                Scene1-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                        <div class="base-col thumbnail-col">-->
-<!--                            <button class="thumbnail-btn" id="thumb-0">-->
-<!--                                <img src="./static/images/thumbnails/scene1.png" alt="paper" class="thumbnails" />-->
-<!--                                Scene2-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                        <div class="base-col thumbnail-col">-->
-<!--                            <button class="thumbnail-btn" id="thumb-1">-->
-<!--                                <img src="./static/images/thumbnails/scene2.png" alt="paper" class="thumbnails" />-->
-<!--                                Scene3-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                        <div class="base-col thumbnail-col">-->
-<!--                            <button class="thumbnail-btn" id="thumb-2">-->
-<!--                                <img src="./static/images/thumbnails/scene3.png" alt="paper" class="thumbnails" />-->
-<!--                                Scene4-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                        <div class="base-col thumbnail-col">-->
-<!--                            <button class="thumbnail-btn" id="thumb-3">-->
-<!--                                <img src="./static/images/thumbnails/scene4.png" alt="paper" class="thumbnails" />-->
-<!--                                Scene5-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                        <div class="base-col thumbnail-col">-->
-<!--                            <button class="thumbnail-btn" id="thumb-4">-->
-<!--                                <img src="./static/images/thumbnails/scene5.png" alt="paper" class="thumbnails" />-->
-<!--                                Scene6-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                        <div class="base-col thumbnail-col">-->
-<!--                            <button class="thumbnail-btn" id="thumb-6">-->
-<!--                                <img src="./static/images/thumbnails/scene7.png" alt="paper" class="thumbnails" />-->
-<!--                                Scene7-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <button class="slide-arrow" id="slide-arrow-next" onclick="slide_right()">-->
-<!--                        &#8250;-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--                </div>-->
-<!--                <br>-->
-<!--                <br>-->
-
-<!--                <div class="base-row add-top-padding">-->
-<!--                    <h1>Evaluating SceneComplete</h1>-->
-<!--                    <p class="paragraph">-->
-<!--                        We evaluate <b>SceneComplete</b> on the challenging GraspNet-1Billion dataset and observe that the parallel jaw grasps sampled using antipodal grasp sampling enable more robust predictions with fewer collisions on the ground truth scene. We also demnstrate dexterous grasps using both Shadow Hands and Allegro Hands, highlighting improved manipulation of complex objects with complete 3D reconstructions.-->
-<!--                    </p>-->
-<!--                </div>-->
+                </div> -->
 
 <!--                <img id="pipeline-img" src="./static/images/qualitative.png" />-->
-                <div class="results-grid">
+                <!-- <div class="results-grid"> -->
                     <!-- Row 1 -->
-                    <div class="result-row">
+                    <!-- <div class="result-row">
                         <img src="./static/images/object_photos/bakingbox.png"
                             alt="Object 1" class="result-image-no-border">
                         <video autoplay loop muted playsinline
@@ -376,10 +324,10 @@
                             <source src="./static/images/bakingbox_3/robotocc_bakingbox_3_bsdf_00_00-t11_1_mesh.mp4"
                                 type="video/mp4">
                         </video>
-                    </div>
+                    </div> -->
 
                     <!-- Row 2 -->
-                    <div class="result-row">
+                    <!-- <div class="result-row">
                         <img src="./static/images/object_photos/bottle.png"
                             alt="Object 2" class="result-image-no-border">
                         <video autoplay loop muted playsinline
@@ -387,10 +335,10 @@
                             <source src="./static/images/bottle_1/robotocc_bottle_1_bsdf_00_00-t09d_1_mesh.mp4"
                                 type="video/mp4">
                         </video>
-                    </div>
+                    </div> -->
 
                     <!-- Row 3 -->
-                    <div class="result-row">
+                    <!-- <div class="result-row">
                         <img src="./static/images/object_photos/egg.png"
                             alt="Object 3" class="result-image-no-border">
                         <video autoplay loop muted playsinline
@@ -398,10 +346,10 @@
                             <source src="./static/images/egg_6/robotocc_egg_6_bsdf_00_00-t11_1_mesh.mp4"
                                 type="video/mp4">
                         </video>
-                    </div>
+                    </div> -->
 
                     <!-- Row 4 -->
-                    <div class="result-row">
+                    <!-- <div class="result-row">
                         <img src="./static/images/object_photos/milk.png"
                             alt="Object 4" class="result-image-no-border">
                         <video autoplay loop muted playsinline
@@ -409,10 +357,10 @@
                             <source src="./static/images/milk_8/robotocc_milk_8_bsdf_00_00-t11_1_mesh.mp4"
                                 type="video/mp4">
                         </video>
-                    </div>
+                    </div> -->
 
                     <!-- Row 5 -->
-                    <div class="result-row">
+                    <!-- <div class="result-row">
                         <img src="./static/images/object_photos/oatly.png"
                             alt="Object 5" class="result-image-no-border">
                         <video autoplay loop muted playsinline
@@ -420,10 +368,10 @@
                             <source src="./static/images/oatly_11/robotocc_oatly_11_bsdf_00_00-t11_1_mesh.mp4"
                                 type="video/mp4">
                         </video>
-                    </div>
+                    </div> -->
 
                     <!-- Row 6 -->
-                    <div class="result-row">
+                    <!-- <div class="result-row">
                         <img src="./static/images/object_photos/styrofoam.png"
                             alt="Object 6" class="result-image-no-border">
                         <video autoplay loop muted playsinline
@@ -431,10 +379,10 @@
                             <source src="./static/images/styrofoam_1/robotocc_styrofoam_1_bsdf_00_00-t09d_1_mesh.mp4"
                                 type="video/mp4">
                         </video>
-                    </div>
+                    </div> -->
 
                     <!-- Row 7 -->
-                    <div class="result-row">
+                    <!-- <div class="result-row">
                         <img src="./static/images/object_photos/toblerone.png"
                             alt="Object 7" class="result-image-no-border">
                         <video autoplay loop muted playsinline
@@ -445,7 +393,7 @@
                     </div>
                 </div>
                 <br>
-                <br>
+                <br> -->
 
                 <div class="base-row add-top-padding">
                     <h1>Geometry Reconstruction</h1>
