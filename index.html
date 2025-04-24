@@ -306,6 +306,95 @@
                     dark blue is < 5mm.
                 </p>
 
+                <nav>
+                    <div class="carousel-slider-wrapper">
+                        <div class = "carousel-slider">
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel_overlay/overlay_milk_3_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel_overlay/overlay_oatly_11_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel_overlay/overlay_styrofoam_1_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel_overlay/overlay_egg_6_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel_overlay/overlay_bottle_1_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel_overlay/overlay_toblerone_11_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel_overlay/overlay_bakingbox_3_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel_overlay/overlay_milk_8_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video  loop playsinline muted autoplay>
+                                    <source autoplay
+                                        src="./static/images/carousel_overlay/overlay_oatly_6_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <button class="carousel-button left" type="button">&lt;</button>
+                        <button class="carousel-button right" type="button">&gt;</button>
+                    </div>
+                </nav>
+
+                <p class="paragraph">
+                    Above, see the learned geometries overlaid on the input
+                    video.  This shows how the physics-based reasoning helps to
+                    extend the geometry beyond the visible regions, towards
+                    contacts PLL infers from the trajectory.  The end effector
+                    is highlighted in yellow.
+                </p>
+
                 <div class="columns is-centered">
                     <div class="column">
                         <img id="geometry-img"
@@ -542,34 +631,34 @@
 
 
     <script>
-        const carousel = document.querySelector('.carousel-slider');
-        const videoContainers = document.querySelectorAll('.video-container');
-        let currentPosition = 0;
+        document.querySelectorAll('.carousel-slider').forEach(
+            (carousel, index) =>
+        {
+            const videoContainers = carousel.querySelectorAll(
+                '.video-container');
+            let currentPosition = 0;
 
-        const leftButton = document.querySelector('.carousel-button.left');
-        leftButton.addEventListener('click', () => {
-            if (currentPosition - 1 < 0) {
-                currentPosition = videoContainers.length - 1;
-            } else {
-                currentPosition = currentPosition - 1;
-            }
+            const leftButton = carousel.parentElement.querySelector(
+                '.carousel-button.left');
+            const rightButton = carousel.parentElement.querySelector(
+                '.carousel-button.right');
 
-            carousel.scrollTo({
-                left: videoContainers[currentPosition].offsetLeft,
-                behavior: 'smooth'
+            leftButton.addEventListener('click', () => {
+                currentPosition = (currentPosition - 1 + videoContainers.length)
+                    % videoContainers.length;
+                carousel.scrollTo({
+                    left: videoContainers[currentPosition].offsetLeft,
+                    behavior: 'smooth'
+                });
             });
-        });
 
-        const rightButton = document.querySelector('.carousel-button.right');
-        rightButton.addEventListener('click', () => {
-            if (currentPosition + 1 > videoContainers.length - 1) {
-                currentPosition = 0;
-            } else {
-                currentPosition = currentPosition + 1;
-            }
-            carousel.scrollTo({
-                left: videoContainers[currentPosition].offsetLeft,
-                behavior: 'smooth'
+            rightButton.addEventListener('click', () => {
+                currentPosition = (currentPosition + 1)
+                    % videoContainers.length;
+                carousel.scrollTo({
+                    left: videoContainers[currentPosition].offsetLeft,
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
