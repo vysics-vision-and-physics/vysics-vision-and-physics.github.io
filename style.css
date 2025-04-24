@@ -2,11 +2,52 @@ body {
     margin: 0;
     min-height: 100%;
     background-color: #fff;
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 12px;
     line-height: 20px;
     overflow-x: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 650px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+}
+
+th, td {
+    border: none;
+    padding: 8px;
+    text-align: center;
+}
+
+td:first-child, th:first-child {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-weight: bold;
+    text-align: left;
+}
+
+td:last-child, th:last-child {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+tr:last-child {
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+th {
+    background-color: #f4f4f4;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
 }
 
 .section {
@@ -47,7 +88,7 @@ body {
 .subheader {
     margin-top: 0;
     margin-bottom: 10px;
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 25px;
     line-height: 44px;
@@ -57,7 +98,7 @@ body {
 .tldr {
     margin-top: 30px;
     margin-bottom: 3px;
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 18px;
     line-height: 24px;
@@ -68,7 +109,7 @@ body {
 .results-text {
     margin-top: 30px;
     margin-bottom: 3px;
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 16px;
     line-height: 24px;
@@ -119,7 +160,7 @@ body {
 }
 
 .author-text {
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 20px;
     font-weight: 400;
@@ -136,7 +177,7 @@ body {
 
 #uc-berkeley {
     padding-top: 10px;
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 16px;
     font-weight: 400;
@@ -146,7 +187,7 @@ body {
 
 #equal-contrib {
     padding-top: 10px;
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 16px;
     font-weight: 400;
@@ -195,7 +236,7 @@ body {
 }
 
 .link-labels-text {
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 14px;
 }
@@ -293,7 +334,7 @@ body {
 .paragraph {
     margin-top: 0px;
     margin-bottom: 20px;
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 16px;
     line-height: 24px;
@@ -305,7 +346,7 @@ body {
 .paragraph-center {
     margin-top: 0px;
     /* margin-bottom: 20px; */
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 16px;
     line-height: 24px;
@@ -402,7 +443,7 @@ body {
 }
 
 #opacity {
-    font-family: 'Google Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
     color: #3c3c3c;
     font-size: 20px;
     line-height: 20px;

@@ -389,10 +389,19 @@
 
                 <p class="paragraph">
                     Above, see the learned geometries overlaid on the input
-                    video.  This shows how the physics-based reasoning helps to
-                    extend the geometry beyond the visible regions, towards
-                    contacts PLL infers from the trajectory.  The end effector
-                    is highlighted in yellow.
+                    video, located at the BundleSDF tracked pose.  This shows
+                    how the physics-based reasoning helps to extend the geometry
+                    beyond the visible regions, towards contacts PLL infers from
+                    the trajectory.  The end effector is highlighted in yellow.
+                    <br><br>
+                    These videos occasionally show imperfections in the pose
+                    estimates from BundleSDF.  Vysics is robust to these amounts
+                    of pose jittering since its contact estimates from PLL
+                    utilize a smooth, implicit-based loss designed with the
+                    multi-modal nature of contact in mind.  However Vysics
+                    cannot recover from large pose errors, since this prevents
+                    consistent incorporation of temporally estimated contacts
+                    into a single object model.
                 </p>
 
                 <div class="columns is-centered">
@@ -422,15 +431,126 @@
 
             <!-- Geometry reconstruction -->
             <div class="base-row add-top-padding">
-                <h1>Geometry Reconstruction</h1>
+                <h1>Geometry Comparison to Data-Driven 3D Generative Models</h1>
                 <p class="paragraph">
-                    A quantitative comparison of the geometric reconstruction
-                    between Vysics and others is provided in Table I, averaged
-                    per object and over all objects. [Place holder] compares example-
-                    by-example with BundleSDF, the only geometric baseline
-                    that, like Vysics, does not require a pretrained model on a
-                    large object dataset.
+                    While the objects are heavily occluded in the camera view,
+                    one may wonder if 3D foundation models, which learn prior
+                    knowledge of the shape of typical objects from a large
+                    amount of data, may recover the occluded geometry in a
+                    generative way.  We tested several data-driven 3D generative
+                    models:  <a
+                    href="https://ieeexplore.ieee.org/document/10160350">
+                    3DSGrasp</a> for point cloud completion (we use points from
+                    visible mesh faces reconstructed by BundleSDF as input);
+                    <a href="https://yushuang-wu.github.io/IPoD/">IPoD</a> for
+                    single-object completion from an RGBD image; and <a
+                    href="https://herb-wright.github.io/v-prism/">V-PRISM</a>
+                    and <a href="https://sh8.io/#/oct_mae">OctMAE</a> for
+                    multi-object scene completion from an RGBD image.  All of
+                    these methods, like Vysics and BundleSDF, are
+                    category-agnostic.  For reconstruction methods from a single
+                    image, we use the last frame of each video clip, which, in
+                    our data, is typically less occluded. We provide object
+                    masks for IPoD and foreground masks for V-PRISM and OctMAE,
+                    then segment the object from their scene completion outputs.
+                    We use published pretrained models for evaluation.  See the
+                    below table for results, showing Vysics outperforms all
+                    other baselines for each object in our dataset and overall.
+                    Foundation models are not yet a hand-waving solution to
+                    shape reconstruction under occlusion, but it could be
+                    valuable to incorporate a data-based prior in our framework
+                    in the future.
                 </p>
+
+                <h2>Table 1:  Chamfer Distance (cm)</h2>
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Method</th>
+                        <th>bakingbox</th>
+                        <th>bottle</th>
+                        <th>egg</th>
+                        <th>milk</th>
+                        <th>oatly</th>
+                        <th>styrofoam</th>
+                        <th>toblerone</th>
+                        <th>all</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="https://bundlesdf.github.io">BundleSDF
+                            </a></td>
+                        <td>3.84</td>
+                        <td>2.65</td>
+                        <td>3.70</td>
+                        <td>3.17</td>
+                        <td>2.45</td>
+                        <td>2.55</td>
+                        <td>2.44</td>
+                        <td>2.98</td>
+                      </tr>
+                      <tr>
+                        <td><a
+                            href="https://ieeexplore.ieee.org/document/10160350">
+                            3DSGrasp</a></td>
+                        <td>3.83</td>
+                        <td>2.80</td>
+                        <td>3.78</td>
+                        <td>3.15</td>
+                        <td>2.51</td>
+                        <td>2.66</td>
+                        <td>2.77</td>
+                        <td>3.06</td>
+                      </tr>
+                      <tr>
+                        <td><a href="https://yushuang-wu.github.io/IPoD/">IPoD
+                            </a></td>
+                        <td>3.25</td>
+                        <td>1.80</td>
+                        <td>2.16</td>
+                        <td>2.37</td>
+                        <td>2.73</td>
+                        <td>1.93</td>
+                        <td>1.97</td>
+                        <td>2.47</td>
+                      </tr>
+                      <tr>
+                        <td><a href="https://herb-wright.github.io/v-prism/">
+                            V-PRISM</a></td>
+                        <td>3.52</td>
+                        <td>2.47</td>
+                        <td>2.31</td>
+                        <td>3.33</td>
+                        <td>2.30</td>
+                        <td>2.54</td>
+                        <td>2.48</td>
+                        <td>2.80</td>
+                      </tr>
+                      <tr>
+                        <td><a href="https://sh8.io/#/oct_mae">OctMAE</a></td>
+                        <td>3.11</td>
+                        <td>2.22</td>
+                        <td>1.52</td>
+                        <td>2.93</td>
+                        <td>2.13</td>
+                        <td>2.00</td>
+                        <td>2.36</td>
+                        <td>2.45</td>
+                      </tr>
+                      <tr>
+                        <td>Vysics (ours)</td>
+                        <td>1.83</td>
+                        <td>1.36</td>
+                        <td>1.05</td>
+                        <td>1.53</td>
+                        <td>1.25</td>
+                        <td>1.45</td>
+                        <td>1.02</td>
+                        <td>1.45</td>
+                      </tr>
+                    </tbody>
+                </table>
             </div>
 
             <br>
