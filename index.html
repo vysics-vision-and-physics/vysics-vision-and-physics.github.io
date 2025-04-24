@@ -60,25 +60,27 @@
 
             <div class="publication-authors" style="font-size:1.25rem;">
                 <span class="author-block">
-                    <a href="https://scholar.google.com/citations?user=lVj0WaQAAAAJ&hl=en" target="_blank">Bibit Bianchini
-                    </a><sup>*1</sup>,</span>
+                    <a href="http://www.bianchini-love.com/bibit"
+                        target="_blank">Bibit Bianchini</a><sup>*1</sup>,</span>
                 <span class="author-block">
                     <span class="author-block">
-                        <a href="https://scholar.google.com/citations?user=70CbUXwAAAAJ&hl=en" target="_blank">Minghan Zhu
-                        </a><sup>*1</sup>,</span>
+                        <a href="https://scholar.google.com/citations?user=70CbUXwAAAAJ&hl=en"
+                            target="_blank">Minghan Zhu</a><sup>*1</sup>,</span>
                     <span class="author-block">
-                        <a href="https://scholar.google.com/citations?user=hXb_RHoAAAAJ&hl=en" target="_blank">Mengti Sun</a><sup>2</sup>,
+                        <a href="https://scholar.google.com/citations?user=hXb_RHoAAAAJ&hl=en"
+                            target="_blank">Mengti Sun</a><sup>2</sup>,
                     </span>
                     <span class="author-block">
-                        <a href="https://scholar.google.com/citations?user=_6AHV9QAAAAJ&hl=en" target="_blank">Bowen Jiang</a><sup>1</sup>,
+                        <a href="https://scholar.google.com/citations?user=_6AHV9QAAAAJ&hl=en"
+                            target="_blank">Bowen Jiang</a><sup>1</sup>,
                     </span>
                     <span class="author-block">
-                        <a href="https://www.cis.upenn.edu/~cjtaylor/" target="_blank">Camillo J. Taylor
-                        </a><sup>1</sup>
+                        <a href="https://www.cis.upenn.edu/~cjtaylor/"
+                            target="_blank">Camillo J. Taylor</a><sup>1</sup>,
                     </span>
                     <span class="author-block">
-                        <a href="https://www.grasp.upenn.edu/people/michael-posa/" target="_blank">Michael Posa
-                        </a><sup>1</sup>
+                        <a href="https://www.grasp.upenn.edu/people/michael-posa/"
+                            target="_blank">Michael Posa</a><sup>1</sup>
                     </span>
             </div>
             <br>
@@ -673,53 +675,6 @@
                     least performant in both position and orientation rollout
                     accuracy.
                 </p>
-            </div>
-
-            <br>
-
-            <!-- Data-driven generative baselines -->
-            <div class="base-row add-top-padding">
-                <h1>Data-Driven Generative Baselines</h1>
-                <p class="paragraph">
-                    While the objects are heavily occluded in the camera
-                    view, one may wonder if 3D foundation models, which learn
-                    prior knowledge of the shape of typical objects from a large
-                    amount of data, may recover the occluded geometry in a
-                    generative way. We tested a few single-view reconstruction
-                    models, and found that they typically assume
-                    an unobstructed view of the object and do not generate a
-                    complete shape when given a partially occluded view. See
-                    Figure 12 for an example. Foundation models are not yet a
-                    hand-waving solution to shape reconstruction under occlusion,
-                    but it could be valuable to incorporate a data-based prior in
-                    our framework in the future.
-                </p>
-
-                <div class="columns is-centered">
-
-                    <!-- Relocalization (particle filter) -->
-                    <div class="column">
-                        <div class="content">
-                            <div class="interpolation-image-wrapper-zero-shot">
-                                <video poster="" id="snoopy" autoplay controls muted loop playsinline height="100%">
-                                    <source src="./static/images/dexterous_grasping/dexterous1.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ Relocalization (particle filter) -->
-
-                    <!-- Text queries via CLIP / GPT-4 -->
-                    <div class="column">
-                        <div class="content">
-                            <div class="interpolation-image-wrapper-zero-shot">
-                                <video poster="" id="snoopy" autoplay controls muted loop playsinline height="100%">
-                                    <source src="./static/images/dexterous_grasping/dexterous2.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <br>
