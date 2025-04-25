@@ -1,32 +1,6 @@
 <html>
 <head>
-    <!-- <meta charset="utf-8" />
-    <title>Vysics</title>
 
-    <meta
-        content="Vysics combines computer vision and contact-rich physics to perform shape reconstruction under occlusion from short RGBD videos and robot proprioception."
-        name="description" />
-    <meta content="Vysics combines vision and physics for shape reconstruction."
-        property="og:title" />
-    <meta
-        content="Vysics combines computer vision and contact-rich physics to perform shape reconstruction under occlusion from short RGBD videos and robot proprioception."
-        name="description" property="og:description" />
-    <meta
-        content="https://vysics-vision-and-physics.github.io/static/images/vysics_meta.png"
-        property="og:image" />
-    <meta content="Vysics combines vision and physics for shape reconstruction."
-        property="twitter:title" />
-    <meta content="Vysics combines computer vision and contact-rich physics to perform shape reconstruction under occlusion from short RGBD videos and robot proprioception."
-        name="description" property="twitter:description" />
-    <meta
-        content="https://vysics-vision-and-physics.github.io/static/images/vysics_meta.png"
-        property="twitter:image" />
-    <meta property="og:type" content="website" />
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1" /> -->
-
-    <!-- Test from SceneComplete: -->
     <meta charset="utf-8" />
     <title>Vysics</title>
 
@@ -45,7 +19,6 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <!-- End of test from SceneComplete^ -->
 
 
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -209,25 +182,32 @@
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Abstract</h1>
                 <p class="paragraph">
-                    We introduce <b>Vysics</b>, a vision-and-physics framework for a robot to build an expressive geometry and dynamics
-                    model of a single rigid body, using a seconds-long RGBD video
-                    and the robot's proprioception. While the computer vision community has built powerful visual 3D perception algorithms, cluttered environments with heavy occlusions can limit the visibility
-                    of objects of interest. However, observed motion of partially occluded objects can imply physical interactions took place, such as
-                    contact with a robot or the environment. These inferred contacts
-                    can supplement the visible geometry with “physible geometry,”
-                    which best explains the observed object motion through physics.
-                    Vysics uses a vision-based tracking and reconstruction method,
-                    BundleSDF, to estimate the trajectory and the visible geometry
-                    from an RGBD video, and an odometry-based model learning
-                    method, Physics Learning Library (PLL), to infer the “physible”
-                    geometry from the trajectory through implicit contact dynamics
-                    optimization. The visible and “physible” geometries jointly factor
-                    into optimizing a signed distance function (SDF) to represent the
-                    object shape. Vysics does not require pretraining, nor tactile
-                    or force sensors. Compared with vision-only methods, Vysics
-                    yields object models with higher geometric accuracy and better
-                    dynamics prediction in experiments where the object interacts
-                    with the robot and the environment under heavy occlusion.
+                    We introduce <b>Vysics</b>, a vision-and-physics framework
+                    for a robot to build an expressive geometry and dynamics
+                    model of a single rigid body, using a seconds-long RGBD
+                    video and the robot's proprioception. While the computer
+                    vision community has built powerful visual 3D perception
+                    algorithms, cluttered environments with heavy occlusions can
+                    limit the visibility of objects of interest. However,
+                    observed motion of partially occluded objects can imply
+                    physical interactions took place, such as contact with a
+                    robot or the environment. These inferred contacts can
+                    supplement the visible geometry with “physible geometry,”
+                    which best explains the observed object motion through
+                    physics. Vysics uses a vision-based tracking and
+                    reconstruction method, BundleSDF, to estimate the trajectory
+                    and the visible geometry from an RGBD video, and an
+                    odometry-based model learning method, Physics Learning
+                    Library (PLL), to infer the “physible” geometry from the
+                    trajectory through implicit contact dynamics optimization.
+                    The visible and “physible” geometries jointly factor into
+                    optimizing a signed distance function (SDF) to represent the
+                    object shape. Vysics does not require pretraining, nor
+                    tactile or force sensors. Compared with vision-only methods,
+                    Vysics yields object models with higher geometric accuracy
+                    and better dynamics prediction in experiments where the
+                    object interacts with the robot and the environment under
+                    heavy occlusion.
                 </p>
             </div>
 
@@ -236,19 +216,26 @@
             <!-- Architecture -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Architecture</h1>
-                <video id="arch-video" autoplay muted loop playsinline height="100%">
-                    <source src="./static/images/vysics_architecture_animation.mp4" type="video/mp4">
+                <video id="arch-video" autoplay muted loop playsinline
+                    height="100%">
+                    <source
+                        src="./static/images/vysics_architecture_animation.mp4"
+                        type="video/mp4">
                 </video>
                 <p class="paragraph">
-                    The figure illustrates the overall design of <b>Vysics</b> from input RGBD videos and
-                    robot states (left) to URDF output (right). Its core components are
+                    The figure illustrates the overall design of <b>Vysics</b>
+                    from input RGBD videos and robot states (left) to URDF
+                    output (right). Its core components are
                     <!-- TODO:  link to BundleSDF? -->
                     <!-- <a href="https://bundlesdf.github.io/" target="_blank">BundleSDF</a> -->
-                    BundleSDF for vision-based
-                    tracking and shape reconstruction, and PLL for physics-inspired dynamics learning. Beyond the insights
-                    that led to this systems integration, our main contribution lies in how Vysics incorporates
-                    these two powerful tools together such that they supervise each other and output an object dynamics
-                    model, featuring geometry informed by both vision and contact.
+                    BundleSDF for vision-based tracking and shape
+                    reconstruction, and PLL for physics-inspired dynamics
+                    learning. Beyond the insights that led to this systems
+                    integration, our main contribution lies in how Vysics
+                    incorporates these two powerful tools together such that
+                    they supervise each other and output an object dynamics
+                    model, featuring geometry informed by both vision and
+                    contact.
                 </p>
             </div>
 
