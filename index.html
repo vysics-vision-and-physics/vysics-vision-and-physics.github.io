@@ -253,102 +253,10 @@
                                 <video autoplay controls muted loop playsinline
                                     height="100%">
                                     <source
-                                        src="./static/images/carousel_geometry/geometry_milk_3_small.mp4"
+                                        src="./static/images/carousel_overlay/overlay_bakingbox_3_small.mp4"
                                         type="video/mp4">
                                 </video>
                             </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
-                                        src="./static/images/carousel_geometry/geometry_oatly_11_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
-                                        src="./static/images/carousel_geometry/geometry_styrofoam_1_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
-                                        src="./static/images/carousel_geometry/geometry_egg_6_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
-                                        src="./static/images/carousel_geometry/geometry_bottle_1_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
-                                        src="./static/images/carousel_geometry/geometry_toblerone_11_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
-                                        src="./static/images/carousel_geometry/geometry_bakingbox_3_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
-                                        src="./static/images/carousel_geometry/geometry_milk_8_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
-                                        src="./static/images/carousel_geometry/geometry_oatly_6_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                        <button class="carousel-button left" type="button">&lt;</button>
-                        <button class="carousel-button right" type="button">&gt;</button>
-                    </div>
-                </nav>
-                <div class="columns is-centered" style="margin-top: -60px;">
-                    <div class="column is-1">
-                        <img src="./static/images/error_bar_text.png" alt="errorbar" style="display: block; margin: 0 auto; width: 60%; min-width: 250px; margin-bottom: 10px;">
-                    </div>
-                </div>
-                <p class="paragraph">
-                    Vysics trains on a seconds-long RGBD video and the robot's
-                    proprioception.  Each example above shows the input video,
-                    a photo of the object, and the reconstructed geometry from
-                    Vysics (which fuses vision and physics) and BundleSDF (vision-only).  
-                </p>
-
-                <nav>
-                    <div class="carousel-slider-wrapper">
-                        <div class = "carousel-slider">
 
                             <div class="video-container">
                                 <video autoplay controls muted loop playsinline
@@ -408,15 +316,6 @@
                                 <video autoplay controls muted loop playsinline
                                     height="100%">
                                     <source
-                                        src="./static/images/carousel_overlay/overlay_bakingbox_3_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
                                         src="./static/images/carousel_overlay/overlay_milk_8_small.mp4"
                                         type="video/mp4">
                                 </video>
@@ -437,20 +336,21 @@
                 </nav>
 
                 <p class="paragraph">
-                    Above, see the learned geometries overlaid on the input
-                    video, located at the BundleSDF tracked pose.  This shows
+                    Vysics trains on a seconds-long RGBD video and the robot's
+                    proprioception.  Above, see the learned geometries overlaid on the input
+                    video with the BundleSDF tracked pose.  This shows
                     how the physics-based reasoning helps to extend the geometry
                     beyond the visible regions, towards contacts PLL infers from
                     the trajectory.  The end effector is highlighted in yellow.
                     <br><br>
-                    These videos occasionally show imperfections in the pose
+                    <!-- These videos occasionally show imperfections in the pose
                     estimates from BundleSDF.  Vysics is robust to these amounts
                     of pose jittering since its contact estimates from PLL
                     utilize a smooth, implicit-based loss designed with the
                     multi-modal nature of contact in mind.  However Vysics
                     cannot recover from large pose errors, since this prevents
                     consistent incorporation of temporally estimated contacts
-                    into a single object model.
+                    into a single object model. -->
                 </p>
 
                 <div class="columns is-centered">
@@ -466,14 +366,114 @@
 
                 <p class="paragraph">
                     Due to severe occlusion in the RGBD videos, vision-based
-                    reconstruction yields significant errors.  For every example
-                    in our dataset, our method improves the reconstructed
-                    geometry by recovering the occluded geometry through
+                    reconstruction yields significant errors.  Our method recovers 
+                    the occluded geometry through
                     physics-based reasoning over the observed trajectories.
                     The plots above show substantial and consistent improvements
                     in terms of both the surface-based metric (chamfer distance)
                     and the volume-based metric (IoU).
                 </p>
+                
+                <nav>
+                    <div class="carousel-slider-wrapper">
+                        <div class = "carousel-slider">
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
+                                        src="./static/images/carousel_geometry/geometry_bakingbox_3_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
+                                        src="./static/images/carousel_geometry/geometry_milk_3_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
+                                        src="./static/images/carousel_geometry/geometry_oatly_11_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
+                                        src="./static/images/carousel_geometry/geometry_styrofoam_1_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
+                                        src="./static/images/carousel_geometry/geometry_egg_6_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
+                                        src="./static/images/carousel_geometry/geometry_bottle_1_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
+                                        src="./static/images/carousel_geometry/geometry_toblerone_11_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
+                                        src="./static/images/carousel_geometry/geometry_milk_8_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
+                                        src="./static/images/carousel_geometry/geometry_oatly_6_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <button class="carousel-button left" type="button">&lt;</button>
+                        <button class="carousel-button right" type="button">&gt;</button>
+                    </div>
+                </nav>
+                <div class="columns is-centered" style="margin-top: -60px;">
+                    <div class="column is-1">
+                        <img src="./static/images/error_bar_text.png" alt="errorbar" style="display: block; margin: 0 auto; width: 60%; min-width: 250px; margin-bottom: 10px;">
+                    </div>
+                </div>
+                <p class="paragraph">
+                    Each example above shows the input video,
+                    a photo of the object, and the reconstructed geometry from
+                    Vysics (which fuses vision and physics) and BundleSDF (vision-only).  
+                </p>
+
             </div>
 
             <br>
@@ -602,6 +602,15 @@
                                 <video autoplay controls muted loop playsinline
                                     height="100%">
                                     <source
+                                        src="./static/images/carousel_dynamics/dynamics_bakingbox_3_small.mp4"
+                                        type="video/mp4">
+                                </video>
+                            </div>
+
+                            <div class="video-container">
+                                <video autoplay controls muted loop playsinline
+                                    height="100%">
+                                    <source
                                         src="./static/images/carousel_dynamics/dynamics_milk_3_small.mp4"
                                         type="video/mp4">
                                 </video>
@@ -648,15 +657,6 @@
                                     height="100%">
                                     <source
                                         src="./static/images/carousel_dynamics/dynamics_toblerone_11_small.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-
-                            <div class="video-container">
-                                <video autoplay controls muted loop playsinline
-                                    height="100%">
-                                    <source
-                                        src="./static/images/carousel_dynamics/dynamics_bakingbox_3_small.mp4"
                                         type="video/mp4">
                                 </video>
                             </div>
