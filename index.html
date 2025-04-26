@@ -336,7 +336,7 @@
                 </nav>
                 <div class="columns is-centered" style="margin-top: -60px;">
                     <div class="column is-1">
-                        <img src="./static/images/error_bar_text.png" alt="errorbar" style="display: block; margin: 0 auto; width: 60%; margin-bottom: 10px;">
+                        <img src="./static/images/error_bar_text.png" alt="errorbar" style="display: block; margin: 0 auto; width: 60%; min-width: 250px; margin-bottom: 10px;">
                     </div>
                 </div>
                 <p class="paragraph">
@@ -480,35 +480,22 @@
 
             <!-- Geometry comparison to data-driven 3d generative models -->
             <div class="base-row add-top-padding">
-                <h1>Geometry Comparison to Data-Driven 3D Generative Models</h1>
+                <h1>Geometry Comparison to Data-Driven Shape Completion Models</h1>
                 <p class="paragraph">
                     While the objects are heavily occluded in the camera view,
-                    one may wonder if 3D foundation models, which learn prior
+                    one may wonder if shape completion models, which learn prior
                     knowledge of the shape of typical objects from a large
-                    amount of data, may recover the occluded geometry in a
-                    generative way.  We tested several data-driven 3D generative
-                    models:  <a
+                    amount of data, may recover the occluded geometry.  We tested 
+                    several data-driven shape completion models:  <a
                     href="https://ieeexplore.ieee.org/document/10160350">
-                    3DSGrasp</a> for point cloud completion (we use points from
-                    visible mesh faces reconstructed by BundleSDF as input);
+                    3DSGrasp</a> for point cloud completion;
                     <a href="https://yushuang-wu.github.io/IPoD/">IPoD</a> for
                     single-object completion from an RGBD image; and <a
                     href="https://herb-wright.github.io/v-prism/">V-PRISM</a>
                     and <a href="https://sh8.io/#/oct_mae">OctMAE</a> for
-                    multi-object scene completion from an RGBD image.  All of
-                    these methods, like Vysics and BundleSDF, are
-                    category-agnostic.  For reconstruction methods from a single
-                    image, we use the last frame of each video clip, which, in
-                    our data, is typically less occluded. We provide object
-                    masks for IPoD and foreground masks for V-PRISM and OctMAE,
-                    then segment the object from their scene completion outputs.
-                    We use published pretrained models for evaluation.  See the
+                    multi-object scene completion from an RGBD image.  See the
                     below table for results, showing Vysics outperforms all
                     other baselines for each object in our dataset and overall.
-                    Foundation models are not yet a hand-waving solution to
-                    shape reconstruction under occlusion, but it could be
-                    valuable to incorporate a data-based prior in our framework
-                    in the future.
                 </p>
 
                 <h2>Table 1:  Chamfer Distance (cm)</h2>
