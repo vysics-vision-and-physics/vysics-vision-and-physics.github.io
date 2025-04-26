@@ -97,7 +97,7 @@
                     1</sup>University of Pennsylvania </span>
 
                 <span class="author-block" style="display:block"><sup>
-                    2</sup>Amazon Robotics</span>
+                    2</sup>Amazon</span>
 
                 <span class="author-block"
                     style="display:block; line-height:60px;">Robotics: Science
@@ -244,26 +244,7 @@
             <!-- Geometry results -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Geometry Results</h1>
-
-                <div class="mesh-scale-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Mesh Surface Error</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td style="color:rgb(89,0,255)">< 5mm</td>
-                            <td><img src="./static/images/error_bar.png" /></td>
-                            <td style="color:red">> 3cm</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
+                
                 <nav>
                     <div class="carousel-slider-wrapper">
                         <div class = "carousel-slider">
@@ -353,16 +334,16 @@
                         <button class="carousel-button right" type="button">&gt;</button>
                     </div>
                 </nav>
-
+                <div class="columns is-centered" style="margin-top: -60px;">
+                    <div class="column is-1">
+                        <img src="./static/images/error_bar_text.png" alt="errorbar" style="display: block; margin: 0 auto; width: 60%; margin-bottom: 10px;">
+                    </div>
+                </div>
                 <p class="paragraph">
                     Vysics trains on a seconds-long RGBD video and the robot's
                     proprioception.  Each example above shows the input video,
                     a photo of the object, and the reconstructed geometry from
-                    Vysics (which fuses vision and physics) and BundleSDF (which
-                    uses vision only).  The mesh coloring indicates the distance
-                    between a local region of the learned shape to the nearest
-                    surface on the ground truth geometry:  red is > 3cm, and
-                    dark blue is < 5mm.
+                    Vysics (which fuses vision and physics) and BundleSDF (vision-only).  
                 </p>
 
                 <nav>
