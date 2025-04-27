@@ -64,7 +64,7 @@
         <div class="container">
             <br>
             <h1 class="title">Vysics</h1>
-            <h1 class="subheader">Object Reconstruction Under Occlusion by
+            <h1 class="subheader">Object Reconstruction Under Occlusion by <br> 
                 Fusing Vision and Contact-Rich Physics</h1>
 
             <div class="publication-authors" style="font-size:1.25rem;">
@@ -216,7 +216,7 @@
             <!-- Architecture -->
             <div class="base-row add-top-padding">
                 <h1 id="abstract">Architecture</h1>
-                <video id="arch-video" autoplay muted loop playsinline
+                <video id="arch-video" controls autoplay muted loop playsinline
                     height="100%">
                     <source
                         src="./static/images/vysics_architecture_animation.mp4"
@@ -335,7 +335,7 @@
                     </div>
                 </nav>
 
-                <p class="paragraph">
+                <p class="paragraph" style="margin-top: -40px;">
                     Vysics trains on a seconds-long RGBD video and the robot's
                     proprioception.  Above, see the learned geometries overlaid on the input
                     video with the BundleSDF tracked pose.  This shows
@@ -704,13 +704,11 @@
                     errors when predicting the entire length of the original
                     trajectory as an open-loop rollout, averaged for every
                     example and result in the dataset. The trajectories range in
-                    length from 3 to 18 seconds.  We point out that even the
-                    ground truth geometry baseline is imperfect, despite using
-                    essentially perfect geometry, due to inaccurate modeling
+                    length from 3 to 18 seconds.  Even the ground truth geometry 
+                    baseline is imperfect, due to inaccurate modeling
                     assumptions such as object rigidity and the divergent nature
                     of the dynamics in many of our robot interactions.  Vysics
-                    and PLL perform closely to this baseline, though Vysics is
-                    moderately worse in orientation divergence.  While most of
+                    and PLL perform closely to this baseline.  While most of
                     the dynamics performance by PLL is retained in Vysics, it is
                     unsurprising to see a slight performance drop, given PLL
                     optimizes only for physics accuracy while Vysics balances
